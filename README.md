@@ -1,2 +1,2 @@
 # Todo-App
-Cool todo app for step 3
+Cool "Todo App" for step 3
