@@ -55,7 +55,7 @@ h1 {
 }
 #todo-input {
     padding: 5px 12px;
-    margin: 10px 0;
+    margin: 10px 0 5px;
     font-size: 18px;
     color: rgb(103, 103, 103);
     height: 38px;
@@ -81,17 +81,17 @@ h1 {
     top: 8px;
     cursor: pointer;
 }
-#save-list{
+#save-list {
     max-height: 300px;
     overflow-y: scroll;
-    width: 329px;
+    width: 334px;
 }
-#save-list span:last-child{
-    margin-bottom: 10px;
+#save-list span:last-child {
+    margin-bottom: 5px;
 }
 #save-list span {
     padding: 5px 0 5px 12px;
-    margin: 5px 0;
+    margin-top: 5px;
     font-size: 18px;
     height: 38px;
     display: flex;
@@ -99,11 +99,13 @@ h1 {
     border-radius: 3px;
     justify-content: space-between;
     align-items: center;
+    width: 320px;
 }
-#save-list span div:first-child{
+#save-list span div:first-child {
     overflow: hidden;
-    text-overflow: ellipsis !important;
+    text-overflow: ellipsis;
     white-space: nowrap;
+    padding-right: 5px;
 }
 #save-list div[id*="delete-btn"] {
     border: 1px solid red;
@@ -133,7 +135,7 @@ h1 {
 #last-line {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 #clear-btn {
     background: var(--dark-purple);
@@ -153,7 +155,7 @@ h1 {
     background: var(--dark-purple);
 }
 #clear-btn,
-#save-list div,
+#save-list span,
 #add-btn,
 #todo-input {
     transition: 0.1s;

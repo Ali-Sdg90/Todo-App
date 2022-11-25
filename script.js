@@ -16,8 +16,8 @@ function addToHtml() {
         console.log(i);
         htmlOutput += `
         <span>
-        <div>${todoSaves[i]}</div> 
-        <div id="delete-btn${i}">X</div>
+            <div>${todoSaves[i]}</div> 
+            <div id="delete-btn${i}">X</div>
         </span>
         `;
     }
