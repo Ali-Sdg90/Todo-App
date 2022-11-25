@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    --light-purple: rgba(141, 70, 255, 0.886);
+    --dark-purple: rgba(127, 48, 255, 0.886);
+    --light-red: rgb(255, 97, 76);
+    --dark-red: rgb(250, 83, 61);
+    --light-gray: rgb(237, 237, 237);
+    --dark-gray: rgb(221, 221, 221);
+    border-radius: 5px;
+    cursor: default;
+}
+::selection {
+    background: transparent;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(166, 166, 166, 0.674);
+    height: 100px;
+    border-radius: 10px;
+    outline: 2px solid white;
+    outline-offset: -2px;
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(137, 137, 137, 0.674);
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, rgb(48, 72, 255), rgb(0, 238, 255));
+}
+#main-div {
+    background: white;
+    width: 360px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
+    padding: 20px;
+    padding-bottom: 15px;
+}
+h1 {
+    font-weight: 600;
+    margin: 10px 0;
+}
+#todo-input {
+    padding: 5px 12px;
+    margin: 10px 0;
+    font-size: 18px;
+    color: rgb(103, 103, 103);
+    height: 38px;
+    width: 274px;
+    border: 1px solid rgb(114, 114, 114);
+}
+#todo-input:focus {
+    color: black;
+    cursor: auto;
+}
+#add-btn {
+    width: 41px;
+    height: 38px;
+    display: inline-flex;
+    color: white;
+    background-color: var(--dark-purple);
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: 40px;
+    padding-bottom: 5px;
+    position: relative;
+    top: 8px;
+    cursor: pointer;
+}
+#save-list{
+    max-height: 300px;
+    overflow-y: scroll;
+    width: 329px;
+}
+#save-list span:last-child{
+    margin-bottom: 10px;
+}
+#save-list span {
+    padding: 5px 0 5px 12px;
+    margin: 5px 0;
+    font-size: 18px;
+    height: 38px;
+    display: flex;
+    background: var(--light-gray);
+    border-radius: 3px;
+    justify-content: space-between;
+    align-items: center;
+}
+#save-list span div:first-child{
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+}
+#save-list div[id*="delete-btn"] {
+    border: 1px solid red;
+    color: white;
+    background: var(--dark-red);
+    opacity: 0;
+    padding: 5px 13px;
+    font-family: cursive;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    opacity: 0.1s;
+    transition: 0.25s 0.05s !important;
+}
+#save-list span:hover {
+    background: var(--dark-gray);
+}
+#save-list span:hover div[id*="delete-btn"] {
+    opacity: 1;
+}
+#save-list div[id*="delete-btn"]:hover {
+    background: var(--light-red);
+}
+#save-list div[id*="delete-btn"]:active {
+    transition: 0.05s !important;
+    background: var(--dark-red);
+}
+#last-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#clear-btn {
+    background: var(--dark-purple);
+    color: white;
+    padding: 7px 8px;
+    position: relative;
+    top: -8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#clear-btn:hover,
+#add-btn:hover {
+    background: var(--light-purple);
+}
+#clear-btn:active,
+#add-btn:active {
+    background: var(--dark-purple);
+}
+#clear-btn,
+#save-list div,
+#add-btn,
+#todo-input {
+    transition: 0.1s;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Todo App</title>
+    </head>
+    <body>
+        <div id="main-div">
+            <h1>Todo App</h1>
+            <form>
+                <input
+                    type="text"
+                    name="text-input"
+                    id="todo-input"
+                    onclick="this.value=''"
+                />
+                <span id="add-btn">+</span>
+            </form>
+            <div id="save-list"></div>
+            <div id="last-line">
+                <span>
+                    <span>You have</span>
+                    <span id="todo-counter">4</span>
+                    <span>pending tasks</span>
+                </span>
+                <span id="clear-btn" title="Double click to clear"
+                    >Clear All</span
+                >
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
