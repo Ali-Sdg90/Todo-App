@@ -13,7 +13,7 @@ function addToHtml() {
     htmlOutput = "";
     for (let i = todoSaves.length; i > 0; ) {
         i--;
-        console.log(i);
+        // console.log(i);
         htmlOutput += `
         <span>
             <div>${todoSaves[i]}</div> 
@@ -42,7 +42,7 @@ todoInput.addEventListener("focusout", function () {
 });
 todoCounter.innerHTML = todoSaves.length;
 clearAll.addEventListener("dblclick", function () {
-    localStorage.clear();
+    localStorage.setItem("saveTodos","[]");
     todoSaves = [];
     addToHtml();
     todoInput.value = defaultTodo;
