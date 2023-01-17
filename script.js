@@ -10,22 +10,44 @@ let todoSaves = [];
 let htmlOutput;
 todoInput.value = defaultTodo;
 // localStorage.clear();
-function addToHtml() {
+function addToHtml(addNewTodo) {
     htmlOutput = "";
     for (let i = todoSaves.length; i > 0; ) {
         i--;
-        htmlOutput += `
-        <span>
-            <div>${todoSaves[i]}</div> 
-            <div id="delete-btn${i}">X</div>
-        </span>
-        `;
+        // htmlOutput += `
+        // <span id="todo-number${i}">
+        //     <div>${todoSaves[i]}</div>
+        //     <div id="opption-number${i}">≣</div>
+        // </span>
+        // `;
+        let newTodo = document.createElement("div");
+        newTodo.textContent = todoSaves[i];
+        let newTodoOpption = document.createElement("div");
+        newTodoOpption.textContent = "≣";
+        newTodoOpption.id = `opption-number${i}`;
+        let newSpan = document.createElement("span");
+        newSpan.id = `todo-number${i}`;
+        newSpan.appendChild(newTodo);
+        newSpan.appendChild(newTodoOpption);
+        todoList.appendChild(newSpan);
+        console.log(todoList);
+        // todoList.innerHTML=newSpan;
+        console.log(todoList);
+        // console.log(newSpan)
+        console.log("============");
     }
-    if (!htmlOutput) {
-        htmlOutput = "<br />";
-    }
-    console.log(htmlOutput);
     todoList.innerHTML = htmlOutput;
+    // if (addNewTodo) {
+    //     const newTodo = document.getElementById(
+    //         `todo-number${todoSaves.length - 1}`
+    //     );
+    //     newTodo.style.transform = "translate(0, -3.5vh)";
+    //     newTodo.style.opacity = "0";
+    //     setTimeout(() => {
+    //         newTodo.style.opacity = "1";
+    //         newTodo.style.transform = "translate(0, 0)";
+    //     }, 10);
+    // }
     todoCounter.textContent = todoSaves.length;
     if (todoSaves.length == 1) {
         pendingTask.textContent = "pending task";
@@ -35,12 +57,12 @@ function addToHtml() {
 }
 if (localTodo) {
     todoSaves = localTodo.split(",");
-    addToHtml();
+    addToHtml(false);
 }
 addBtn.addEventListener("click", function () {
     if (!todoInput.value || todoInput.value == defaultTodo) return;
     todoSaves.push(todoInput.value);
-    addToHtml();
+    addToHtml(true);
     todoInput.value = defaultTodo;
     localStorage.setItem("saveTodos", todoSaves);
 });
@@ -51,7 +73,9 @@ todoCounter.textContent = todoSaves.length;
 clearAll.addEventListener("dblclick", function () {
     localStorage.setItem("saveTodos", "");
     todoSaves = [];
-    addToHtml();
+    todoList.innerHTML = "<br />";
+    todoCounter.textContent = todoSaves.length;
+    pendingTask.textContent = "pending tasks";
     todoInput.value = defaultTodo;
 });
 todoList.addEventListener("mouseup", function () {
@@ -61,7 +85,7 @@ todoList.addEventListener("mouseup", function () {
             .addEventListener("click", function () {
                 todoSaves.splice(i, 1);
                 localStorage.setItem("saveTodos", todoSaves);
-                addToHtml();
+                addToHtml(false);
             });
     }
 });

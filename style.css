@@ -10,8 +10,8 @@
 :root {
     --light-purple: rgba(141, 70, 255, 0.886);
     --dark-purple: rgba(127, 48, 255, 0.886);
-    --light-red: rgb(255, 97, 76);
-    --dark-red: rgb(250, 83, 61);
+    --light-blue: rgb(69, 128, 255);
+    --dark-blue: rgb(48, 114, 255);
     --light-gray: rgb(237, 237, 237);
     --dark-gray: rgb(221, 221, 221);
 }
@@ -52,6 +52,7 @@ body {
     box-shadow: 0 0 1.4vh rgba(0, 0, 0, 0.397);
     padding: 2.8vh;
     padding-bottom: 2.1vh;
+    position: relative;
 }
 h1 {
     font-weight: 600;
@@ -100,16 +101,17 @@ br {
     margin-bottom: 0.7vh;
 }
 #save-list span {
-    padding: 0.7vh 0 0.7vh 1.7vh;
+    padding-left: 1.7vh;
     margin-top: 0.7vh;
     font-size: 2.5vh;
     height: 5.3vh;
     display: flex;
+    align-items: center;
     background: var(--light-gray);
     border-radius: 0.42vh;
     justify-content: space-between;
-    align-items: center;
     width: 44.9vh;
+    transition: opacity 0.7s, background 0.1s, transform 0.6s;
 }
 #save-list span div:first-child {
     overflow: hidden;
@@ -117,30 +119,35 @@ br {
     white-space: nowrap;
     padding-right: 0.7vh;
 }
-#save-list div[id*="delete-btn"] {
-    border: 0.14vh solid red;
+#save-list div[id*="opption-number"] {
     color: white;
-    background: var(--dark-red);
-    opacity: 0;
-    padding: 0.7vh 1.8vh;
+    background: var(--dark-blue);
+    opacity: 1;
+    padding: 0 2.8vh;
+    padding-bottom: 0.56vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8vh;
+    height: 100%;
+    width: 5.75vh;
     font-family: cursive;
     border-radius: 0 0.4vh 0.4vh 0;
     cursor: pointer;
-    opacity: 0.1s;
     transition: opacity 0.25s 0.05s !important;
 }
 #save-list span:hover {
     background: var(--dark-gray);
 }
-#save-list span:hover div[id*="delete-btn"] {
+#save-list span:hover div[id*="opption-number"] {
     opacity: 1;
 }
-#save-list div[id*="delete-btn"]:hover {
-    background: var(--light-red);
+#save-list div[id*="opption-number"]:hover {
+    background: var(--light-blue);
 }
-#save-list div[id*="delete-btn"]:active {
+#save-list div[id*="opption-number"]:active {
     transition: background 0.05s !important;
-    background: var(--dark-red);
+    background: var(--dark-blue);
 }
 #last-line {
     display: flex;
@@ -165,7 +172,6 @@ br {
     background: var(--dark-purple);
 }
 #clear-btn,
-#save-list span,
 #add-btn,
 #todo-input {
     transition: background 0.1s;
