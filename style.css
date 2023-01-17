@@ -10,8 +10,6 @@
 :root {
     --light-purple: rgba(141, 70, 255, 0.886);
     --dark-purple: rgba(127, 48, 255, 0.886);
-    --light-blue: rgb(69, 128, 255);
-    --dark-blue: rgb(48, 114, 255);
     --light-gray: rgb(237, 237, 237);
     --dark-gray: rgb(221, 221, 221);
 }
@@ -73,6 +71,10 @@ br {
     width: 38.5vh;
     border: 0.14vh solid rgb(114, 114, 114);
 }
+#todo-input::selection {
+    background: var(--dark-purple);
+    color: white;
+}
 #todo-input:focus {
     color: black;
     cursor: auto;
@@ -121,6 +123,7 @@ br {
 }
 #save-list span[id*="todo-number"] {
     position: relative;
+    transition: opacity 0.3s;
 }
 svg {
     width: 20px;
@@ -129,8 +132,6 @@ svg {
 div[id*="edit-number"],
 div[id*="complete-number"],
 div[id*="delete-number"] {
-    color: white;
-    background: var(--dark-blue);
     opacity: 0;
     display: flex;
     align-items: center;
@@ -142,7 +143,6 @@ div[id*="delete-number"] {
     border-radius: 0;
     cursor: pointer;
     position: absolute;
-    right: 0;
     transition: opacity 0.25s 0.05s, background 0.2s !important;
 }
 div[id*="edit-number"] {
@@ -184,10 +184,6 @@ div[id*="complete-number"]:active {
 div[id*="delete-number"]:active {
     background: rgb(255, 109, 109);
 }
-#save-list div[id*="opption-number"]:active {
-    transition: background 0.05s !important;
-    background: var(--dark-blue);
-}
 #last-line {
     display: flex;
     justify-content: space-between;
@@ -214,4 +210,16 @@ div[id*="delete-number"]:active {
 #add-btn,
 #todo-input {
     transition: background 0.1s;
+}
+.complete-todo {
+    color: gray;
+    text-decoration: line-through;
+}
+#filter-nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+#filter-nav svg{
+    width: 100px;
 }

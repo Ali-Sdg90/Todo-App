@@ -10,13 +10,8 @@
     <body>
         <div id="main-div">
             <h1>Todo App</h1>
-            <form>
-                <input
-                    type="text"
-                    name="text-input"
-                    id="todo-input"
-                    onclick="this.value=''"
-                />
+            <form id="input-form">
+                <input type="text" name="text-input" id="todo-input" />
                 <span id="add-btn">+</span>
             </form>
             <div id="save-list"><br /></div>
@@ -31,6 +26,73 @@
                 >
             </div>
         </div>
+
+        <div id="filter-nav">
+            <div id="filter-all">
+                <p>All</p>
+                <svg
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="400"
+                    height="125.4125412541254"
+                    viewBox="0, 0, 400,125.4125412541254"
+                >
+                    <g id="svgg">
+                        <path
+                            id="path0"
+                            d="M65.347 19.658 C 47.355 24.343,39.376 36.250,21.681 84.818 C 20.882 87.012,29.987 87.129,201.179 87.129 C 300.365 87.129,381.518 86.826,381.518 86.455 C 381.518 86.084,377.658 76.612,372.941 65.404 C 359.053 32.412,352.425 24.650,335.314 21.339 C 326.653 19.663,71.429 18.074,65.347 19.658 "
+                            stroke="none"
+                            fill="#ffffff"
+                            fill-rule="evenodd"
+                        ></path>
+                    </g>
+                </svg>
+            </div>
+            <div id="filter-active">
+                <p>Active</p>
+                <svg
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="400"
+                    height="125.4125412541254"
+                    viewBox="0, 0, 400,125.4125412541254"
+                >
+                    <g id="svgg">
+                        <path
+                            id="path0"
+                            d="M65.347 19.658 C 47.355 24.343,39.376 36.250,21.681 84.818 C 20.882 87.012,29.987 87.129,201.179 87.129 C 300.365 87.129,381.518 86.826,381.518 86.455 C 381.518 86.084,377.658 76.612,372.941 65.404 C 359.053 32.412,352.425 24.650,335.314 21.339 C 326.653 19.663,71.429 18.074,65.347 19.658 "
+                            stroke="none"
+                            fill="#ffffff"
+                            fill-rule="evenodd"
+                        ></path>
+                    </g>
+                </svg>
+            </div>
+            <div id="filter-completed">
+                <p>Completed</p>
+                <svg
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="400"
+                    height="125.4125412541254"
+                    viewBox="0, 0, 400,125.4125412541254"
+                >
+                    <g id="svgg">
+                        <path
+                            id="path0"
+                            d="M65.347 19.658 C 47.355 24.343,39.376 36.250,21.681 84.818 C 20.882 87.012,29.987 87.129,201.179 87.129 C 300.365 87.129,381.518 86.826,381.518 86.455 C 381.518 86.084,377.658 76.612,372.941 65.404 C 359.053 32.412,352.425 24.650,335.314 21.339 C 326.653 19.663,71.429 18.074,65.347 19.658 "
+                            stroke="none"
+                            fill="#ffffff"
+                            fill-rule="evenodd"
+                        ></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </html>
