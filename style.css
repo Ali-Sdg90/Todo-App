@@ -3,20 +3,24 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    border-radius: 0.7vh;
+    cursor: default;
+    font-size: 2.24vh;
+}
+:root {
     --light-purple: rgba(141, 70, 255, 0.886);
     --dark-purple: rgba(127, 48, 255, 0.886);
     --light-red: rgb(255, 97, 76);
     --dark-red: rgb(250, 83, 61);
     --light-gray: rgb(237, 237, 237);
     --dark-gray: rgb(221, 221, 221);
-    border-radius: 5px;
-    cursor: default;
 }
 ::selection {
     background: transparent;
 }
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 1.4vh;
+    height: 1.4vh;
     background: transparent;
 }
 ::-webkit-scrollbar-track {
@@ -24,11 +28,11 @@
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(166, 166, 166, 0.674);
-    height: 100px;
-    border-radius: 10px;
-    outline: 2px solid white;
-    outline-offset: -2px;
-    transition: 0.5s;
+    height: 14vh;
+    border-radius: 1.4vh;
+    outline: 0.3vh solid white;
+    outline-offset: -0.3vh;
+    transition: background 0.5s;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(137, 137, 137, 0.674);
@@ -40,84 +44,90 @@ body {
 }
 #main-div {
     background: white;
-    width: 360px;
+    width: 50.5vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
-    padding: 20px;
-    padding-bottom: 15px;
+    box-shadow: 0 0 1.4vh rgba(0, 0, 0, 0.397);
+    padding: 2.8vh;
+    padding-bottom: 2.1vh;
 }
 h1 {
     font-weight: 600;
-    margin: 10px 0;
+    margin: 1.4vh 0;
+    font-size: 4.62vh;
+}
+br {
+    display: block;
+    height: 0.7vh;
+    content: "";
 }
 #todo-input {
-    padding: 5px 12px;
-    margin: 10px 0 5px;
-    font-size: 18px;
+    padding: 0.7vh 1.7vh;
+    margin: 1.4vh 0 0.7vh;
+    font-size: 2.5vh;
     color: rgb(103, 103, 103);
-    height: 38px;
-    width: 274px;
-    border: 1px solid rgb(114, 114, 114);
+    height: 5.4vh;
+    width: 38.5vh;
+    border: 0.14vh solid rgb(114, 114, 114);
 }
 #todo-input:focus {
     color: black;
     cursor: auto;
 }
 #add-btn {
-    width: 41px;
-    height: 38px;
+    width: 5.75vh;
+    height: 5.33vh;
     display: inline-flex;
     color: white;
     background-color: var(--dark-purple);
     justify-content: center;
     align-items: center;
     font-family: cursive;
-    font-size: 40px;
-    padding-bottom: 5px;
+    font-size: 5.6vh;
+    padding-bottom: 0.7vh;
     position: relative;
-    top: 8px;
+    top: 1.12vh;
     cursor: pointer;
 }
 #save-list {
-    max-height: 300px;
+    max-height: 42vh;
     overflow-y: scroll;
-    width: 334px;
+    width: 46.85vh;
 }
 #save-list span:last-child {
-    margin-bottom: 5px;
+    margin-bottom: 0.7vh;
 }
 #save-list span {
-    padding: 5px 0 5px 12px;
-    margin-top: 5px;
-    font-size: 18px;
-    height: 38px;
+    padding: 0.7vh 0 0.7vh 1.7vh;
+    margin-top: 0.7vh;
+    font-size: 2.5vh;
+    height: 5.3vh;
     display: flex;
     background: var(--light-gray);
-    border-radius: 3px;
+    border-radius: 0.42vh;
     justify-content: space-between;
     align-items: center;
-    width: 320px;
+    width: 44.9vh;
 }
 #save-list span div:first-child {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding-right: 5px;
+    padding-right: 0.7vh;
 }
 #save-list div[id*="delete-btn"] {
-    border: 1px solid red;
+    border: 0.14vh solid red;
     color: white;
     background: var(--dark-red);
     opacity: 0;
-    padding: 5px 13px;
+    padding: 0.7vh 1.8vh;
     font-family: cursive;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 0.4vh 0.4vh 0;
     cursor: pointer;
     opacity: 0.1s;
-    transition: 0.25s 0.05s !important;
+    transition: opacity 0.25s 0.05s !important;
 }
 #save-list span:hover {
     background: var(--dark-gray);
@@ -129,21 +139,21 @@ h1 {
     background: var(--light-red);
 }
 #save-list div[id*="delete-btn"]:active {
-    transition: 0.05s !important;
+    transition: background 0.05s !important;
     background: var(--dark-red);
 }
 #last-line {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 2.1vh;
 }
 #clear-btn {
     background: var(--dark-purple);
     color: white;
-    padding: 7px 8px;
+    padding: 1vh 1.12vh;
     position: relative;
-    top: -8px;
-    border-radius: 3px;
+    top: -1.12vh;
+    border-radius: 0.42vh;
     cursor: pointer;
 }
 #clear-btn:hover,
@@ -158,5 +168,5 @@ h1 {
 #save-list span,
 #add-btn,
 #todo-input {
-    transition: 0.1s;
+    transition: background 0.1s;
 }
