@@ -42,7 +42,6 @@ function addToHtml(addNewTodo) {
             .addEventListener("click", function () {
                 completeBtn(i);
             });
-        console.log(i);
         document
             .getElementById(`delete-number${i}`)
             .addEventListener("click", function () {
@@ -86,12 +85,14 @@ function deleteBtn(todoNumber) {
     document.getElementById(`todo-number${todoNumber}`).style.opacity = 0;
     setTimeout(() => {
         addToHtml(false);
+        filterTopCalc()
     }, 250);
 }
 if (localTodo) {
     todoSaves = localTodo.split(",");
     addToHtml(false);
 }
+let firstTopFilter = 35.3;
 addBtn.addEventListener("click", function () {
     if (!todoInput.value || todoInput.value == defaultTodo) return;
     if (editTodo != -1) {
@@ -107,7 +108,16 @@ addBtn.addEventListener("click", function () {
     addToHtml(true);
     todoInput.value = defaultTodo;
     localStorage.setItem("saveTodos", todoSaves);
+    filterTopCalc()
 });
+function filterTopCalc(){
+    if (todoSaves.length < 8) {
+        let filterTop = firstTopFilter - todoSaves.length * 2.95 + "vh";
+        console.log(firstTopFilter);
+        document.getElementById("filter-nav-background").style.top = filterTop;
+        document.getElementById("filter-nav-text").style.top = filterTop;
+    }
+}
 todoInput.addEventListener("focusin", function () {
     if (editTodo == -1) todoInput.value = "";
 });
@@ -122,4 +132,8 @@ clearAll.addEventListener("dblclick", function () {
     todoCounter.textContent = todoSaves.length;
     pendingTask.textContent = "pending tasks";
     todoInput.value = defaultTodo;
+    filterTopCalc()
 });
+document.getElementById("filter-all").addEventListener("click",function(){
+    console.log("hi")
+})
