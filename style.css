@@ -222,20 +222,23 @@ div[id*="delete-number"]:active {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
     position: absolute;
-    top: 35.3vh;
+    top: 35.5vh;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50.5vh;
 }
 #filter-nav-background svg {
-    width: 150%;
+    width: 170%;
     height: 4.5vh;
 }
 #filter-nav-text p {
-    width: 150%;
-    padding-bottom: 0.42vh;
+    z-index: 3;
+    width: 170%;
+    padding-bottom: 1.3vh;
     font-size: 1.68vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    position: a;
 }
