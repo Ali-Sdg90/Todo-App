@@ -221,7 +221,6 @@ div[id*="delete-number"]:active {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    /* border: 1px solid red; */
     position: absolute;
     top: 35.3vh;
     left: 50%;
@@ -229,19 +228,12 @@ div[id*="delete-number"]:active {
     width: 50.5vh;
 }
 #filter-nav-background svg {
-    /* border: 1px solid yellow; */
     width: 150%;
     height: 4.5vh;
 }
-#filter-nav-text {
-    /* padding-left: 20px; */
-    /* grid-template-columns: repeat(4, 1fr); */
-}
 #filter-nav-text p {
     width: 150%;
-    /* border: 1px solid white; */
     padding-bottom: 0.42vh;
-    /* color: #939393; */
     font-size: 1.68vh;
     display: flex;
     justify-content: center;
