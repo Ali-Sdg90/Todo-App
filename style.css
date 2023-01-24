@@ -144,7 +144,7 @@ div[id*="delete-number"] {
     transition: opacity 0.25s 0.05s, background 0.2s !important;
 }
 div[id*="edit-number"] {
-    right: 11.2vh;
+    right: 11.4vh;
     background: rgb(109, 109, 255);
 }
 div[id*="complete-number"] {

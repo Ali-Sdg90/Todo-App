@@ -6,13 +6,11 @@ const clearAll = document.getElementById("clear-btn");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("save-list");
 const localTodo = localStorage.getItem("saveTodos");
-const defaultTodo = "Add your new todo";
 let todoSaves = [];
 let filteredTodoSaves = [];
 let editTodo = -1;
 let firstTopFilter = 35.5;
 let filterList = "all"; // all - active - completed
-todoInput.value = defaultTodo;
 // localStorage.clear();
 
 if (localTodo) {
@@ -42,6 +40,7 @@ function filterTodoSavesFunc() {
     }
 }
 function addToHtml(addNewTodo) {
+    todoInput.value = "";
     filterTodoSavesFunc();
     if (!filteredTodoSaves.length) todoList.innerHTML = "<br />";
     else todoList.innerHTML = "";
@@ -154,31 +153,27 @@ function completeBtn(todoNumber) {
     else addToHtml(false);
 }
 function deleteBtn(todoNumber) {
-    //work
-    todoSaves.splice(todoNumber, 1);
-    localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
-    document.getElementById(`todo-number${todoNumber}`).style.opacity = 0;
-    setTimeout(() => {
-        addToHtml(false);
-    }, 250);
+    deleteSave = filteredTodoSaves[todoNumber];
+    filteredTodoSaves = [];
+    filteredTodoSaves.push(deleteSave);
+    console.log(filteredTodoSaves);
+    deleteFunc();
 }
 function addTodoSaves(newTodo, newIsComplete) {
     this.todo = newTodo;
     this.isComplete = newIsComplete;
 }
 addBtn.addEventListener("click", function () {
-    if (!todoInput.value || todoInput.value == defaultTodo) return;
+    if (!todoInput.value) return;
     if (editTodo != -1) {
         todoSaves[editTodo].todo = todoInput.value;
         addBtn.textContent = "+";
         editTodo = -1;
         localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
         addToHtml(false);
-        todoInput.value = defaultTodo;
         return;
     }
     todoSaves[todoSaves.length] = new addTodoSaves(todoInput.value, false);
-    todoInput.value = defaultTodo;
     addBtn.blur();
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
     addToHtml(true);
@@ -192,26 +187,25 @@ document.addEventListener("keyup", function (event) {
         addBtn.dispatchEvent(new Event("click"));
     }
 });
-todoInput.addEventListener("focusin", function () {
-    if (editTodo == -1) todoInput.value = "";
-});
-todoInput.addEventListener("focusout", function () {
-    if (!todoInput.value) todoInput.value = defaultTodo;
-});
 todoCounter.textContent = todoSaves.length;
 clearAll.addEventListener("dblclick", function () {
-    for (let filteredSaves in filteredTodoSaves) {
-        for (let saves in todoSaves) {
-            if (filteredTodoSaves[filteredSaves] == todoSaves[saves]) {
-                delete todoSaves[saves];
+    deleteFunc();
+});
+function deleteFunc() {
+    for (let i = 0; i < filteredTodoSaves.length; i++) {
+        for (let j = 0; j < todoSaves.length; j++) {
+            if (filteredTodoSaves[i] == todoSaves[j]) {
+                console.log("IN", todoSaves[j]);
+                delete todoSaves[j];
             }
         }
     }
     todoSaves = todoSaves.filter((value) => Object.keys(value).length !== 0);
-    todoInput.value = defaultTodo;
+    console.log("---------");
+    console.log(todoSaves);
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
     addToHtml(false);
-});
+}
 const filterBackground = document.getElementsByClassName("filter-background");
 const filtertext = document.getElementsByClassName("filter-text");
 const filterDivBackground = document.getElementsByClassName(
