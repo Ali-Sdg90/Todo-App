@@ -231,14 +231,20 @@ div[id*="delete-number"]:active {
     width: 170%;
     height: 4.5vh;
 }
+#filter-nav-text {
+    gap: 1.964vh;
+    padding-left: 4.6vh;
+}
 #filter-nav-text p {
     z-index: 3;
-    width: 170%;
+    width: 130%;
     padding-bottom: 1.3vh;
     font-size: 1.68vh;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    position: a;
+}
+#filter-nav-background div:first-child {
+    z-index: 2;
 }
