@@ -1,15 +1,17 @@
 const addBtn = document.getElementById("add-btn");
 const todoCounter = document.getElementById("todo-counter");
-const pendingTask = document.getElementById("pending-task");
+const taskTasks = document.getElementById("task-tasks");
+const pendingFilter = document.getElementById("pending-filter");
 const clearAll = document.getElementById("clear-btn");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("save-list");
 const localTodo = localStorage.getItem("saveTodos");
 const defaultTodo = "Add your new todo";
 let todoSaves = [];
+let filteredTodoSaves = [];
 let editTodo = -1;
 let firstTopFilter = 35.5;
-let filterList = "all";
+let filterList = "all"; // all - active - completed
 todoInput.value = defaultTodo;
 // localStorage.clear();
 
@@ -18,30 +20,29 @@ if (localTodo) {
     addToHtml(false);
 }
 function filterTodoSavesFunc() {
-    let tempTodoSaves = [];
+    filteredTodoSaves = [];
     switch (filterList) {
         case "active":
             todoSaves.forEach(function (save) {
                 if (!save.isComplete) {
-                    tempTodoSaves.push(save);
+                    filteredTodoSaves.push(save);
                 }
             });
             break;
         case "completed":
             todoSaves.forEach(function (save) {
                 if (save.isComplete) {
-                    tempTodoSaves.push(save);
+                    filteredTodoSaves.push(save);
                 }
             });
             break;
         case "all":
-            tempTodoSaves = todoSaves;
+            filteredTodoSaves = todoSaves;
             break;
     }
-    return tempTodoSaves;
 }
 function addToHtml(addNewTodo) {
-    let filteredTodoSaves = filterTodoSavesFunc();
+    filterTodoSavesFunc();
     if (!filteredTodoSaves.length) todoList.innerHTML = "<br />";
     else todoList.innerHTML = "";
     for (let i = filteredTodoSaves.length; i > 0; ) {
@@ -96,16 +97,36 @@ function addToHtml(addNewTodo) {
     }
     todoCounter.textContent = filteredTodoSaves.length;
     if (filteredTodoSaves.length == 1) {
-        pendingTask.textContent = "pending task";
+        taskTasks.textContent = "task";
     } else {
-        pendingTask.textContent = "pending tasks";
+        taskTasks.textContent = "tasks";
+    }
+    switch (filterList) {
+        case "all":
+            pendingFilter.textContent = "";
+            if (filteredTodoSaves.length == 1) {
+                taskTasks.textContent = "tasks in total";
+            } else {
+                taskTasks.textContent = "tasks in total";
+            }
+            break;
+        case "active":
+            pendingFilter.textContent = "active";
+            break;
+        case "completed":
+            pendingFilter.textContent = "completed";
+            break;
     }
     if (filteredTodoSaves.length < 8) {
         let filterTop = firstTopFilter - filteredTodoSaves.length * 2.95 + "vh";
         document.getElementById("filter-nav-background").style.top = filterTop;
         document.getElementById("filter-nav-text").style.top = filterTop;
+    } else {
+        document.getElementById("filter-nav-background").style.top = "14.85vh";
+        document.getElementById("filter-nav-text").style.top = "14.85vh";
     }
 }
+
 function editBtn(todoNumber) {
     todoInput.value = todoSaves[todoNumber].todo;
     editTodo = todoNumber;
@@ -115,13 +136,22 @@ function editBtn(todoNumber) {
     todoInput.focus();
 }
 function completeBtn(todoNumber) {
-    if (todoSaves[todoNumber].isComplete) {
-        todoSaves[todoNumber].isComplete = false;
-    } else {
-        todoSaves[todoNumber].isComplete = true;
+    for (let i = 0; i < todoSaves.length; i++) {
+        if (todoSaves[i].todo == filteredTodoSaves[todoNumber].todo) {
+            if (todoSaves[i].isComplete) {
+                todoSaves[i].isComplete = false;
+            } else {
+                todoSaves[i].isComplete = true;
+            }
+        }
     }
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
-    addToHtml(false);
+    document.getElementById(`todo-number${todoNumber}`).style.opacity = 0;
+    if (filterList != "all")
+        setTimeout(() => {
+            addToHtml(false);
+        }, 250);
+    else addToHtml(false);
 }
 function deleteBtn(todoNumber) {
     //work
@@ -148,9 +178,19 @@ addBtn.addEventListener("click", function () {
         return;
     }
     todoSaves[todoSaves.length] = new addTodoSaves(todoInput.value, false);
-    addToHtml(true);
     todoInput.value = defaultTodo;
+    addBtn.blur();
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
+    addToHtml(true);
+});
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+});
+document.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        addBtn.dispatchEvent(new Event("click"));
+    }
 });
 todoInput.addEventListener("focusin", function () {
     if (editTodo == -1) todoInput.value = "";
@@ -160,9 +200,16 @@ todoInput.addEventListener("focusout", function () {
 });
 todoCounter.textContent = todoSaves.length;
 clearAll.addEventListener("dblclick", function () {
-    todoSaves = [];
-    localStorage.setItem("saveTodos", []);
+    for (let filteredSaves in filteredTodoSaves) {
+        for (let saves in todoSaves) {
+            if (filteredTodoSaves[filteredSaves] == todoSaves[saves]) {
+                delete todoSaves[saves];
+            }
+        }
+    }
+    todoSaves = todoSaves.filter((value) => Object.keys(value).length !== 0);
     todoInput.value = defaultTodo;
+    localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
     addToHtml(false);
 });
 const filterBackground = document.getElementsByClassName("filter-background");

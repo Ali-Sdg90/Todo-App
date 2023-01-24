@@ -103,6 +103,7 @@ br {
     margin-bottom: 0.7vh;
 }
 #save-list span {
+    position: relative;
     padding-left: 1.7vh;
     margin-top: 0.7vh;
     font-size: 2.5vh;
@@ -120,10 +121,6 @@ br {
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-right: 0.7vh;
-}
-#save-list span[id*="todo-number"] {
-    position: relative;
-    transition: opacity 0.3s;
 }
 svg {
     width: 2.8vh;
