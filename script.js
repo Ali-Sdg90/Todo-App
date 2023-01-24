@@ -13,10 +13,13 @@ let firstTopFilter = 35.5;
 let filterList = "all"; // all - active - completed
 // localStorage.clear();
 
+// If localSave is available, todoSaves will be set to localSave :
 if (localTodo) {
     todoSaves = JSON.parse(localStorage.getItem("saveTodos"));
-    addToHtml(false);
+    updateHTML(false);
 }
+
+// Filter the todoSave in all - active - completed modes :
 function filterTodoSavesFunc() {
     filteredTodoSaves = [];
     switch (filterList) {
@@ -39,7 +42,12 @@ function filterTodoSavesFunc() {
             break;
     }
 }
-function addToHtml(addNewTodo) {
+
+// Update the DOM
+// Create new tasks with buttons and addEventListeners to them
+// Set the position of navigation filters
+// Update pending tasks in different modes :
+function updateHTML(addNewTodo) {
     todoInput.value = "";
     filterTodoSavesFunc();
     if (!filteredTodoSaves.length) todoList.innerHTML = "<br />";
@@ -104,7 +112,7 @@ function addToHtml(addNewTodo) {
         case "all":
             pendingFilter.textContent = "";
             if (filteredTodoSaves.length == 1) {
-                taskTasks.textContent = "tasks in total";
+                taskTasks.textContent = "task in total";
             } else {
                 taskTasks.textContent = "tasks in total";
             }
@@ -126,17 +134,24 @@ function addToHtml(addNewTodo) {
     }
 }
 
-function editBtn(todoNumber) {
-    todoInput.value = todoSaves[todoNumber].todo;
-    editTodo = todoNumber;
+// Function of edit button on tasks
+// Change the style of the addBtn and set the value of todoInput to the task that is 
+// going to change :
+function editBtn(taskNumber) {
+    todoInput.value = todoSaves[taskNumber].todo;
+    editTodo = taskNumber;
     addBtn.textContent = "✓";
     addBtn.style.fontSize = "4.6vh";
     addBtn.style.padding = "0.5vh";
     todoInput.focus();
 }
-function completeBtn(todoNumber) {
+
+// Function of complete button on tasks
+// Find the taskNumber in todoSaves and change its isComplete property to the opposite
+// value :
+function completeBtn(taskNumber) {
     for (let i = 0; i < todoSaves.length; i++) {
-        if (todoSaves[i].todo == filteredTodoSaves[todoNumber].todo) {
+        if (todoSaves[i].todo == filteredTodoSaves[taskNumber].todo) {
             if (todoSaves[i].isComplete) {
                 todoSaves[i].isComplete = false;
             } else {
@@ -145,52 +160,75 @@ function completeBtn(todoNumber) {
         }
     }
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
-    document.getElementById(`todo-number${todoNumber}`).style.opacity = 0;
+    document.getElementById(`todo-number${taskNumber}`).style.opacity = 0;
     if (filterList != "all")
         setTimeout(() => {
-            addToHtml(false);
+            updateHTML(false);
         }, 250);
-    else addToHtml(false);
+    else updateHTML(false);
 }
-function deleteBtn(todoNumber) {
-    deleteSave = filteredTodoSaves[todoNumber];
+
+// Function of delete button on tasks
+// Set filteredTodoSaves to the value of the task and run the deleteFunc() function :
+function deleteBtn(taskNumber) {
+    deleteSave = filteredTodoSaves[taskNumber];
     filteredTodoSaves = [];
     filteredTodoSaves.push(deleteSave);
     console.log(filteredTodoSaves);
     deleteFunc();
+    document.getElementById(`todo-number${taskNumber}`).style.opacity = 0;
+    setTimeout(() => {
+        updateHTML(false);
+    }, 250);
 }
+
+// Object constructor for new task :
 function addTodoSaves(newTodo, newIsComplete) {
     this.todo = newTodo;
     this.isComplete = newIsComplete;
 }
+
+// If todoInput.value avalable add it to todoSaves and localSave
+// addBtn can also be the button to register the editBtn() :
 addBtn.addEventListener("click", function () {
     if (!todoInput.value) return;
     if (editTodo != -1) {
         todoSaves[editTodo].todo = todoInput.value;
         addBtn.textContent = "+";
+        addBtn.style.fontSize = "5.6vh";
+        addBtn.style.padding = "0";
+        addBtn.style.paddingBottom = "0.7vh";
         editTodo = -1;
         localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
-        addToHtml(false);
+        updateHTML(false);
         return;
     }
     todoSaves[todoSaves.length] = new addTodoSaves(todoInput.value, false);
     addBtn.blur();
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
-    addToHtml(true);
+    updateHTML(true);
 });
 
+// Prevent the browser's default behavior of refreshing the page when 'enter' is 
+// pressed while an input is in focus :
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
 });
+
+// Simulate clicking on the addBtn by pressing the Enter key.
 document.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         addBtn.dispatchEvent(new Event("click"));
     }
 });
-todoCounter.textContent = todoSaves.length;
+
+// Double-click on the Clear All button to delete the task on the filteredTodoSaves :
 clearAll.addEventListener("dblclick", function () {
     deleteFunc();
+    updateHTML(false);
 });
+
+// Delete Tasks that are present in both filteredTodoSaves and todoSaves :
 function deleteFunc() {
     for (let i = 0; i < filteredTodoSaves.length; i++) {
         for (let j = 0; j < todoSaves.length; j++) {
@@ -201,11 +239,11 @@ function deleteFunc() {
         }
     }
     todoSaves = todoSaves.filter((value) => Object.keys(value).length !== 0);
-    console.log("---------");
-    console.log(todoSaves);
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
-    addToHtml(false);
 }
+
+// Add an addEventListener to the filter buttons and change the styles
+// for the buttons :
 const filterBackground = document.getElementsByClassName("filter-background");
 const filtertext = document.getElementsByClassName("filter-text");
 const filterDivBackground = document.getElementsByClassName(
@@ -231,6 +269,6 @@ for (let i = 0; i < 3; i++) {
                 filterList = "completed";
                 break;
         }
-        addToHtml(false);
+        updateHTML(false);
     });
 }
