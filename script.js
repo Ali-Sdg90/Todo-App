@@ -141,8 +141,7 @@ function editBtn(taskNumber) {
     todoInput.value = todoSaves[taskNumber].todo;
     editTodo = taskNumber;
     addBtn.textContent = "✓";
-    addBtn.style.fontSize = "4.6vh";
-    addBtn.style.padding = "0.5vh";
+    addBtn.classList.add("change-add-btn");
     todoInput.focus();
 }
 
@@ -171,10 +170,9 @@ function completeBtn(taskNumber) {
 // Function of delete button on tasks
 // Set filteredTodoSaves to the value of the task and run the deleteFunc() function :
 function deleteBtn(taskNumber) {
-    deleteSave = filteredTodoSaves[taskNumber];
+    let deleteSave = filteredTodoSaves[taskNumber];
     filteredTodoSaves = [];
     filteredTodoSaves.push(deleteSave);
-    console.log(filteredTodoSaves);
     deleteFunc();
     document.getElementById(`todo-number${taskNumber}`).style.opacity = 0;
     setTimeout(() => {
@@ -195,9 +193,7 @@ addBtn.addEventListener("click", function () {
     if (editTodo != -1) {
         todoSaves[editTodo].todo = todoInput.value;
         addBtn.textContent = "+";
-        addBtn.style.fontSize = "5.6vh";
-        addBtn.style.padding = "0";
-        addBtn.style.paddingBottom = "0.7vh";
+        addBtn.classList.remove("change-add-btn");
         editTodo = -1;
         localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
         updateHTML(false);
@@ -233,12 +229,10 @@ function deleteFunc() {
     for (let i = 0; i < filteredTodoSaves.length; i++) {
         for (let j = 0; j < todoSaves.length; j++) {
             if (filteredTodoSaves[i] == todoSaves[j]) {
-                console.log("IN", todoSaves[j]);
-                delete todoSaves[j];
+                todoSaves.splice(j, 1);
             }
         }
     }
-    todoSaves = todoSaves.filter((value) => Object.keys(value).length !== 0);
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
 }
 
@@ -253,7 +247,6 @@ for (let i = 0; i < 3; i++) {
     filtertext[i].addEventListener("click", function () {
         for (let j = 0; j < 3; j++) {
             filterBackground[j].style.fill = "rgb(198, 198, 198)";
-            filterBackground[j].style.position = "relative";
             filterDivBackground[j].style.zIndex = "1";
         }
         filterBackground[i].style.fill = "white";

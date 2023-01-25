@@ -94,6 +94,10 @@ br {
     top: 1.12vh;
     cursor: pointer;
 }
+.change-add-btn{
+    font-size: 4.8vh !important;
+    padding: 0.5vh;
+}
 #save-list {
     max-height: 42vh;
     overflow-y: scroll;
