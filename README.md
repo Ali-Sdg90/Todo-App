@@ -11,4 +11,6 @@
 <ul><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
 <h2>Authors</h2>
 <ul><li><a href="https://github.com/Ali-Sdg90" target="_new">Ali-Sdg90</a></li></ul>
+<ul><li>Jsfiddle Step 3: <a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/">https://jsfiddle.net/Ali_Sdg90/v60okbum/</a>
+<li>Jsfiddle Step 4: <a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/">https://jsfiddle.net/Ali_Sdg90/k4Lwxare/</a></ul>
 <p>README written by ChatGPT.</p>
