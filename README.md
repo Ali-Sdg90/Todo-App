@@ -9,8 +9,9 @@
 <p>The app uses an array <code>todoSaves</code> to store the tasks and another array <code>filteredTodoSaves</code> to store the filtered tasks. The <code>filterTodoSavesFunc()</code> function is used to filter the tasks based on the filter mode (<code>all</code>, <code>active</code>, or <code>completed</code>) and the <code>updateHTML(addNewTodo)</code> function is used to update the DOM and refresh the list of tasks.</p>
 <h2>Built With</h2>
 <ul><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
-<h2>Authors</h2>
+<h2>Author</h2>
 <ul><li><a href="https://github.com/Ali-Sdg90" target="_new">Ali-Sdg90</a></li></ul>
-<ul><li>Jsfiddle Step 3: <a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/">https://jsfiddle.net/Ali_Sdg90/v60okbum/</a>
-<li>Jsfiddle Step 4: <a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/">https://jsfiddle.net/Ali_Sdg90/k4Lwxare/</a></ul>
-<p>README written by ChatGPT.</p>
+<h2>Jsfiddle</h2>
+<ul><li>Step 3 : <a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/" target="_blank">https://jsfiddle.net/Ali_Sdg90/v60okbum/</a>
+<li>Step 4 : <a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/" target="_blank">https://jsfiddle.net/Ali_Sdg90/k4Lwxare/</a></ul>
+
