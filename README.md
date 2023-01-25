@@ -11,4 +11,4 @@
 <ul><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
 <h2>Authors</h2>
 <ul><li><a href="https://github.com/Ali-Sdg90" target="_new">Ali-Sdg90</a></li></ul>
-<p>README written by chatGPT.</p>
+<p>README written by ChatGPT.</p>
