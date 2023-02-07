@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border-radius: 0.7vh;
+    cursor: default;
+    font-size: 2.24vh;
+}
+
+$light-purple: rgba(141, 70, 255, 0.886);
+$dark-purple: rgba(127, 48, 255, 0.886);
+$light-gray: rgb(237, 237, 237);
+$dark-gray: rgb(221, 221, 221);
+
+::selection {
+    background: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 1.4vh;
+    height: 1.4vh;
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(166, 166, 166, 0.674);
+    height: 14vh;
+    border-radius: 1.4vh;
+    outline: 0.3vh solid white;
+    outline-offset: -0.3vh;
+    transition: background 0.5s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(137, 137, 137, 0.674);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, rgb(48, 72, 255), rgb(0, 238, 255));
+}
+
+h1 {
+    font-weight: 600;
+    margin: 1.4vh 0;
+    font-size: 4.62vh;
+}
+
+br {
+    display: block;
+    height: 0.7vh;
+    content: "";
+}
+
+@mixin list-btns() {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8vh;
+    height: 100%;
+    width: 5.75vh;
+    font-family: cursive;
+    border-radius: 0;
+    cursor: pointer;
+    position: absolute;
+    transition: opacity 0.25s 0.05s, background 0.2s !important;
+}

@@ -1,0 +1,226 @@
+@import "config";
+
+#main-div {
+    background: white;
+    width: 50.5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1.4vh rgba(0, 0, 0, 0.397);
+    padding: 2.8vh;
+    padding-bottom: 2.1vh;
+    position: relative;
+}
+
+#todo-input {
+    padding: 0.7vh 1.7vh;
+    margin: 1.4vh 0 0.7vh;
+    font-size: 2.5vh;
+    color: rgb(103, 103, 103);
+    height: 5.4vh;
+    width: 38.5vh;
+    border: 0.14vh solid rgb(114, 114, 114);
+    transition: background 0.1s;
+
+    &::selection {
+        background: $dark-purple;
+        color: white;
+    }
+
+    &:focus {
+        color: black;
+        cursor: auto;
+    }
+}
+
+#add-btn {
+    width: 5.75vh;
+    height: 5.33vh;
+    display: inline-flex;
+    color: white;
+    background-color: $dark-purple;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: 5.6vh;
+    padding-bottom: 0.7vh;
+    position: relative;
+    top: 1.12vh;
+    cursor: pointer;
+    transition: background 0.1s;
+
+    &:hover {
+        background: $light-purple;
+    }
+
+    &:active {
+        background: $dark-purple;
+    }
+}
+
+.change-add-btn {
+    font-size: 4.8vh !important;
+    padding: 0.5vh;
+}
+
+#save-list {
+    max-height: 42vh;
+    overflow-y: scroll;
+    width: 46.85vh;
+
+    & span {
+        position: relative;
+        padding-left: 1.7vh;
+        margin-top: 0.7vh;
+        font-size: 2.5vh;
+        height: 5.3vh;
+        display: flex;
+        align-items: center;
+        background: $light-gray;
+        border-radius: 0.42vh;
+        justify-content: space-between;
+        width: 44.9vh;
+        transition: opacity 0.5s, background 0.1s, transform 0.4s;
+
+        &:last-child {
+            margin-bottom: 0.7vh;
+        }
+
+        &:hover {
+            background: $dark-gray;
+
+            & div[id*="edit-number"] {
+                opacity: 0.95;
+
+                &:hover {
+                    background: rgb(139, 126, 255);
+                }
+
+                &:active {
+                    background: rgb(109, 109, 255);
+                }
+            }
+            & div[id*="complete-number"] {
+                opacity: 0.95;
+
+                &:hover {
+                    background: rgb(142, 253, 199);
+                }
+
+                &:active {
+                    background: rgb(109, 255, 177);
+                }
+            }
+            & div[id*="delete-number"] {
+                opacity: 0.95;
+
+                &:hover {
+                    background: rgb(255, 137, 137);
+                }
+
+                &:active {
+                    background: rgb(255, 109, 109);
+                }
+            }
+        }
+
+        & div:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 0.7vh;
+        }
+    }
+}
+
+div[id*="edit-number"] {
+    @include list-btns();
+    right: 11.4vh;
+    background: rgb(109, 109, 255);
+}
+div[id*="complete-number"] {
+    @include list-btns();
+    right: 5.7vh;
+    background: rgb(109, 255, 177);
+}
+div[id*="delete-number"] {
+    @include list-btns();
+    border-radius: 0 0.4vh 0.4vh 0;
+    right: 0;
+    background: rgb(255, 109, 109);
+}
+
+svg {
+    width: 2.8vh;
+    height: 3.37vh;
+    cursor: pointer;
+}
+
+#last-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.1vh;
+}
+
+#clear-btn {
+    background: $dark-purple;
+    color: white;
+    padding: 1vh 1.12vh;
+    position: relative;
+    top: -1.12vh;
+    border-radius: 0.42vh;
+    cursor: pointer;
+    transition: background 0.1s;
+
+    &:hover {
+        background: $light-purple;
+    }
+
+    &:active {
+        background: $dark-purple;
+    }
+}
+
+.complete-todo {
+    color: gray;
+    text-decoration: line-through;
+}
+
+#filter-nav-background {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    position: absolute;
+    top: 35.5vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50.5vh;
+
+    & svg {
+        width: 170%;
+        height: 4.5vh;
+        opacity: 1;
+    }
+
+    & div:first-child {
+        z-index: 2;
+    }
+}
+
+#filter-nav-text {
+    @extend #filter-nav-background;
+    gap: 1.964vh;
+    padding-left: 4.6vh;
+
+    & p {
+        z-index: 3;
+        width: 130%;
+        padding-bottom: 1.3vh;
+        font-size: 1.68vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}

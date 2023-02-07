@@ -135,7 +135,7 @@ function updateHTML(addNewTodo) {
 }
 
 // Function of edit button on tasks
-// Change the style of the addBtn and set the value of todoInput to the task that is 
+// Change the style of the addBtn and set the value of todoInput to the task that is
 // going to change :
 function editBtn(taskNumber) {
     todoInput.value = todoSaves[taskNumber].todo;
@@ -205,7 +205,7 @@ addBtn.addEventListener("click", function () {
     updateHTML(true);
 });
 
-// Prevent the browser's default behavior of refreshing the page when 'enter' is 
+// Prevent the browser's default behavior of refreshing the page when 'enter' is
 // pressed while an input is in focus :
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
