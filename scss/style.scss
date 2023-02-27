@@ -147,33 +147,33 @@ br {
                 opacity: 0.95;
 
                 &:hover {
-                    background: rgb(139, 126, 255);
+                    background: $edit-number-color-hover;
                 }
 
                 &:active {
-                    background: rgb(109, 109, 255);
+                    background: $edit-number-color-active;
                 }
             }
             & div[id*="complete-number"] {
                 opacity: 0.95;
 
                 &:hover {
-                    background: rgb(142, 253, 199);
+                    background: $complete-number-color-hover;
                 }
 
                 &:active {
-                    background: rgb(109, 255, 177);
+                    background: $complete-number-color-active;
                 }
             }
             & div[id*="delete-number"] {
                 opacity: 0.95;
 
                 &:hover {
-                    background: rgb(255, 137, 137);
+                    background: $delete-number-color-hover;
                 }
 
                 &:active {
-                    background: rgb(255, 109, 109);
+                    background: $delete-number-color-active;
                 }
             }
         }
@@ -190,18 +190,18 @@ br {
 div[id*="edit-number"] {
     @include list-btns();
     right: 11.4vh;
-    background: rgb(109, 109, 255);
+    background: $edit-number-color;
 }
 div[id*="complete-number"] {
     @include list-btns();
     right: 5.7vh;
-    background: rgb(109, 255, 177);
+    background: $complete-number-color;
 }
 div[id*="delete-number"] {
     @include list-btns();
     border-radius: 0 0.4vh 0.4vh 0;
     right: 0;
-    background: rgb(255, 109, 109);
+    background: $delete-number-color;
 }
 
 svg {
@@ -236,7 +236,7 @@ svg {
 }
 
 .complete-todo {
-    color: gray;
+    color: $complete-todo-text-color;
     text-decoration: line-through;
 }
 
@@ -257,7 +257,7 @@ svg {
     }
 
     & div:first-child {
-        z-index: 2;
+        z-index: $z-index-bottom;
     }
 }
 
@@ -267,7 +267,7 @@ svg {
     padding-left: 4.6vh;
 
     & p {
-        z-index: 3;
+        z-index: $z-index-top;
         width: 130%;
         padding-bottom: 1.3vh;
         font-size: $font-size-filter-nav-text;
