@@ -1,7 +1,60 @@
 @import "config";
+@import "mixin";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $default-font-family;
+    border-radius: 0.7vh;
+    font-size: $font-size-medium;
+    cursor: default;
+}
+
+::selection {
+    background: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 1.4vh;
+
+    &-track {
+        background: $main-background;
+    }
+
+    &-thumb {
+        background: $thomb-color;
+        border-radius: 1.4vh;
+        outline: 0.3vh solid $main-background;
+        outline-offset: -0.3vh;
+        transition: background 0.5s;
+
+        &:hover {
+            background: $thomb-color-hover;
+        }
+    }
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: $body-background;
+}
+
+h1 {
+    font-weight: 600;
+    margin: 1.4vh 0;
+    font-size: $font-size-h1;
+}
+
+br {
+    display: block;
+    height: 0.7vh;
+    content: "";
+}
 
 #main-div {
-    background: white;
+    background: $main-background;
     width: 50.5vh;
     position: absolute;
     top: 50%;
@@ -16,8 +69,8 @@
 #todo-input {
     padding: 0.7vh 1.7vh;
     margin: 1.4vh 0 0.7vh;
-    font-size: 2.5vh;
-    color: rgb(103, 103, 103);
+    font-size: $font-size-input;
+    color: $input-text-color;
     height: 5.4vh;
     width: 38.5vh;
     border: 0.14vh solid rgb(114, 114, 114);
@@ -29,7 +82,7 @@
     }
 
     &:focus {
-        color: black;
+        color: $input-text-color-active;
         cursor: auto;
     }
 }
@@ -43,7 +96,7 @@
     justify-content: center;
     align-items: center;
     font-family: cursive;
-    font-size: 5.6vh;
+    font-size: $font-size-add-btn;
     padding-bottom: 0.7vh;
     position: relative;
     top: 1.12vh;
@@ -60,7 +113,7 @@
 }
 
 .change-add-btn {
-    font-size: 4.8vh !important;
+    font-size: $font-size-change-add-btn !important;
     padding: 0.5vh;
 }
 
@@ -73,7 +126,7 @@
         position: relative;
         padding-left: 1.7vh;
         margin-top: 0.7vh;
-        font-size: 2.5vh;
+        font-size: $font-size-save-list;
         height: 5.3vh;
         display: flex;
         align-items: center;
@@ -217,7 +270,7 @@ svg {
         z-index: 3;
         width: 130%;
         padding-bottom: 1.3vh;
-        font-size: 1.68vh;
+        font-size: $font-size-filter-nav-text;
         display: flex;
         justify-content: center;
         align-items: center;
