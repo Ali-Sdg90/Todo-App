@@ -2,28 +2,25 @@ const obj = {
     todos: ko.observableArray([]),
     todoText: ko.observable(""),
     addTodo: function () {
-        console.log(obj.todoText());
         obj.todos.push(new addNewTodo(obj.todoText()));
+        obj.todoText("");
     },
     todosFilter: ko.observable("active"), // all - active - completed
 };
 
 obj.showTodos = ko.computed(function () {
-    console.log(
-        obj.todos().filter(function (todo) {
-            switch (obj.todosFilter()) {
-                case "all":
-                    return todo;
-                    break;
-                case "active":
-                    return todo.isActive();
-                    break;
-                case "completed":
-                    return !todo.isActive();
-                    break;
-            }
-        })
-    );
+    switch (obj.todosFilter()) {
+        case "active":
+            return obj.todos().filter(function (todo) {
+                return todo.isActive();
+            });
+        case "completed":
+            return obj.todos().filter(function (todo) {
+                return !todo.isActive();
+            });
+        default:
+            return obj.todos();
+    }
 });
 
 function addNewTodo(todoText) {

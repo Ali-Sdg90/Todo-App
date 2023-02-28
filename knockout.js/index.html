@@ -23,7 +23,7 @@
                 />
                 <span id="add-btn" data-bind="click:addTodo">+</span>
             </form>
-            <div id="save-list" data-bind="foreach:todos">
+            <div id="save-list" data-bind="foreach:showTodos">
                 <span>
                     <div data-bind="text:todoText"></div>
                     <!-- data-bind="click:editTodo" -->
@@ -113,10 +113,7 @@
                     <span id="pending-filter">pending</span>
                     <span id="task-tasks">tasks</span>
                 </span>
-                <span
-                    id="clear-btn"
-                    title="Double click to clear"
-                    data-bind="click:showTodos"
+                <span id="clear-btn" title="Double click to clear"
                     >Clear All</span
                 >
             </div>
