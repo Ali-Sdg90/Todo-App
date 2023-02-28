@@ -26,7 +26,8 @@
             <div id="save-list" data-bind="foreach:todos">
                 <span>
                     <div data-bind="text:todoText"></div>
-                    <div data-bind="click:editTodo" id="edit-number1">
+                    <!-- data-bind="click:editTodo" -->
+                    <div class="edit-number">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 30 30"
@@ -38,7 +39,11 @@
                             />
                         </svg>
                     </div>
-                    <div data-bind="click:checkTodo">
+                    <!-- data-bind="click:changeCompleteState" -->
+                    <div
+                        data-bind="click:changeCompleteState"
+                        class="complete-number"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -50,7 +55,7 @@
                             />
                         </svg>
                     </div>
-                    <div data-bind="click:deleteTodo">
+                    <div data-bind="click:deleteTodo" class="delete-number">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48"
@@ -101,11 +106,17 @@
             <div id="last-line">
                 <span>
                     <span>You have</span>
-                    <span id="todo-counter"></span>
+                    <span
+                        id="todo-counter"
+                        data-bind="text:todos().length"
+                    ></span>
                     <span id="pending-filter">pending</span>
                     <span id="task-tasks">tasks</span>
                 </span>
-                <span id="clear-btn" title="Double click to clear"
+                <span
+                    id="clear-btn"
+                    title="Double click to clear"
+                    data-bind="click:showTodos"
                     >Clear All</span
                 >
             </div>
@@ -173,7 +184,7 @@
             <p></p>
             <p></p>
         </div>
-        <script src="knockout.js/knockout-3.5.1.js"></script>
-        <script src="knockout.js/script.js"></script>
+        <script src="js/knockout-3.5.1.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

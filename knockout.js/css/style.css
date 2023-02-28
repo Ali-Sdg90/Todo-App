@@ -132,31 +132,31 @@ br {
 #save-list span:hover {
   background: rgb(221, 221, 221);
 }
-#save-list span:hover div[id*=edit-number] {
+#save-list span:hover .edit-number {
   opacity: 0.95;
 }
-#save-list span:hover div[id*=edit-number]:hover {
+#save-list span:hover .edit-number:hover {
   background: rgb(139, 126, 255);
 }
-#save-list span:hover div[id*=edit-number]:active {
+#save-list span:hover .edit-number:active {
   background: rgb(109, 109, 255);
 }
-#save-list span:hover div[id*=complete-number] {
+#save-list span:hover .complete-number {
   opacity: 0.95;
 }
-#save-list span:hover div[id*=complete-number]:hover {
+#save-list span:hover .complete-number:hover {
   background: rgb(142, 253, 199);
 }
-#save-list span:hover div[id*=complete-number]:active {
+#save-list span:hover .complete-number:active {
   background: rgb(109, 255, 177);
 }
-#save-list span:hover div[id*=delete-number] {
+#save-list span:hover .delete-number {
   opacity: 0.95;
 }
-#save-list span:hover div[id*=delete-number]:hover {
+#save-list span:hover .delete-number:hover {
   background: rgb(255, 137, 137);
 }
-#save-list span:hover div[id*=delete-number]:active {
+#save-list span:hover .delete-number:active {
   background: rgb(255, 109, 109);
 }
 #save-list span div:first-child {
@@ -166,7 +166,7 @@ br {
   padding-right: 0.7vh;
 }
 
-div[id*=edit-number] {
+.edit-number {
   opacity: 0;
   display: flex;
   align-items: center;
@@ -183,7 +183,7 @@ div[id*=edit-number] {
   background: rgb(109, 109, 255);
 }
 
-div[id*=complete-number] {
+.complete-number {
   opacity: 0;
   display: flex;
   align-items: center;
@@ -200,7 +200,7 @@ div[id*=complete-number] {
   background: rgb(109, 255, 177);
 }
 
-div[id*=delete-number] {
+.delete-number {
   opacity: 0;
   display: flex;
   align-items: center;
@@ -284,4 +284,4 @@ svg {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}/*# sourceMappingURL=plz work.css.map */
+}/*# sourceMappingURL=style.css.map */

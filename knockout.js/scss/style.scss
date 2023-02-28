@@ -143,7 +143,7 @@ br {
         &:hover {
             background: $dark-gray;
 
-            & div[id*="edit-number"] {
+            & .edit-number {
                 opacity: 0.95;
 
                 &:hover {
@@ -154,7 +154,7 @@ br {
                     background: $edit-number-color-active;
                 }
             }
-            & div[id*="complete-number"] {
+            & .complete-number {
                 opacity: 0.95;
 
                 &:hover {
@@ -165,7 +165,7 @@ br {
                     background: $complete-number-color-active;
                 }
             }
-            & div[id*="delete-number"] {
+            & .delete-number {
                 opacity: 0.95;
 
                 &:hover {
@@ -187,17 +187,17 @@ br {
     }
 }
 
-div[id*="edit-number"] {
+.edit-number {
     @include list-btns();
     right: 11.4vh;
     background: $edit-number-color;
 }
-div[id*="complete-number"] {
+.complete-number {
     @include list-btns();
     right: 5.7vh;
     background: $complete-number-color;
 }
-div[id*="delete-number"] {
+.delete-number {
     @include list-btns();
     border-radius: 0 0.4vh 0.4vh 0;
     right: 0;
