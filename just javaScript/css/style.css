@@ -268,7 +268,7 @@ svg {
   opacity: 1;
 }
 #filter-nav-background div:first-child, #filter-nav-text div:first-child {
-  z-index: 2;
+  z-index: 1;
 }
 
 #filter-nav-text {
@@ -276,7 +276,7 @@ svg {
   padding-left: 4.6vh;
 }
 #filter-nav-text p {
-  z-index: 3;
+  z-index: 2;
   width: 130%;
   padding-bottom: 1.3vh;
   font-size: 1.68vh;
