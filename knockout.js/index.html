@@ -27,7 +27,7 @@
                 <span>
                     <div data-bind="text:todoText"></div>
                     <!-- data-bind="click:editTodo" -->
-                    <div class="edit-number">
+                    <div data-bind="click:editTodo" class="edit-number">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 30 30"
@@ -108,10 +108,12 @@
                     <span>You have</span>
                     <span
                         id="todo-counter"
-                        data-bind="text:todos().length"
+                        data-bind="text:showTodos().length"
                     ></span>
                     <span id="pending-filter">pending</span>
-                    <span id="task-tasks">tasks</span>
+                    <span id="task-tasks" data-bind="text:taskTasks"
+                        >tasks</span
+                    >
                 </span>
                 <span id="clear-btn" title="Double click to clear"
                     >Clear All</span
@@ -137,6 +139,7 @@
                     </g>
                 </svg>
             </div>
+            <!-- data-bind="click:todosFilterActive" -->
             <div class="filter-div-background">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,6 +157,7 @@
                     </g>
                 </svg>
             </div>
+            <!-- data-bind="click:todosFilterCompleted" -->
             <div class="filter-div-background">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -175,9 +179,15 @@
             <div></div>
         </div>
         <div id="filter-nav-text">
-            <p class="filter-text">All &nbsp</p>
-            <p class="filter-text">Active</p>
-            <p class="filter-text">&nbspCompleted</p>
+            <p class="filter-text" data-bind="click:todosFilterAll">
+                All &nbsp
+            </p>
+            <p class="filter-text" data-bind="click:todosFilterActive">
+                Active
+            </p>
+            <p class="filter-text" data-bind="click:todosFilterCompleted">
+                &nbspCompleted
+            </p>
             <p></p>
             <p></p>
         </div>
