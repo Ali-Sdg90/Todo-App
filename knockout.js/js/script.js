@@ -1,3 +1,21 @@
+const filterBackground = document.getElementsByClassName("filter-background");
+const filtertext = document.getElementsByClassName("filter-text");
+const filterDivBackground = document.getElementsByClassName(
+    "filter-div-background"
+);
+
+for (let i = 0; i < 3; i++) {
+    filtertext[i].addEventListener("click", function () {
+        for (let j = 0; j < 3; j++) {
+            filterBackground[j].style.fill = "rgb(198, 198, 198)";
+            filterDivBackground[j].style.zIndex = "1";
+        }
+        filterBackground[i].style.fill = "white";
+        filterDivBackground[i].style.zIndex = "2";
+    });
+}
+
+const localTodo = localStorage.getItem("saveTodos-knockout");
 const todoInput = document.getElementById("todo-input");
 
 const VM = {
@@ -10,7 +28,7 @@ const VM = {
             VM.todoText("");
         }
     },
-    todosFilter: ko.observable("active"), // all - active - completed
+    todosFilter: ko.observable("all"), // all - active - completed
 };
 
 VM.showTodos = ko.computed(function () {
@@ -29,7 +47,7 @@ VM.showTodos = ko.computed(function () {
         }
     };
     if (filteredList().length < 8) {
-        let filterTop = 35.5 - filteredList().length * 2.95 + "vh";
+        let filterTop = 35.9 - filteredList().length * 3.0 + "vh";
         document.getElementById("filter-nav-background").style.top = filterTop;
         document.getElementById("filter-nav-text").style.top = filterTop;
     } else {
@@ -87,5 +105,30 @@ VM.taskTasks = ko.computed(function () {
         return "tasks";
     }
 });
+
+VM.clearAll = function () {
+    VM.todos(
+        VM.todos().filter(function (todo) {
+            return !VM.showTodos().includes(todo);
+        })
+    );
+};
+
+// const localTodo = localStorage.getItem("saveTodos-knockout");
+
+// localStorage.clear();
+VM.todos.subscribe(function () {
+    console.log("CHANGE!");
+    localStorage.setItem("saveTodos-knockout", JSON.stringify(VM));
+    // console.log(VM.todos(), JSON.stringify(VM.todos()), JSON.parse(VM.todos()));
+    console.log(VM)
+    console.log("End of Changes!");
+    // console.log("S:",JSON.stringify(VM.todos()))
+});
+
+if (localTodo) {
+    console.log("R:",localStorage.getItem("saveTodos-knockout"))
+    // VM.todos(localStorage.getItem("saveTodos-knockout"));
+}
 
 ko.applyBindings(VM);
