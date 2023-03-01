@@ -23,12 +23,15 @@
                 />
                 <span id="add-btn" data-bind="click:addTodo">+</span>
             </form>
+            <span data-bind="html:addBr()"></span>
             <div id="save-list" data-bind="foreach:showTodos">
                 <span>
-                    <div data-bind="text:todoText"></div>
+                    <div
+                        data-bind="text:todoText, css: { 'complete-todo': !isActive() }"
+                    ></div>
                     <!-- data-bind="click:editTodo" -->
                     <div data-bind="click:editTodo" class="edit-number">
-                    <!-- <div class="edit-number"> -->
+                        <!-- <div class="edit-number"> -->
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 30 30"
@@ -111,7 +114,9 @@
                         id="todo-counter"
                         data-bind="text:showTodos().length"
                     ></span>
-                    <span id="pending-filter">pending</span>
+                    <span id="pending-filter" data-bind="text:padding()"
+                        >pending</span
+                    >
                     <span id="task-tasks" data-bind="text:taskTasks"
                         >tasks</span
                     >
@@ -196,6 +201,7 @@
             <p></p>
         </div>
         <script src="js/knockout-3.5.1.js"></script>
+        <script src="js/knockout.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
