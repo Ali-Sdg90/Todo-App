@@ -15,7 +15,6 @@ for (let i = 0; i < 3; i++) {
     });
 }
 
-const localTodo = localStorage.getItem("saveTodos-knockout");
 const todoInput = document.getElementById("todo-input");
 
 const VM = {
@@ -30,6 +29,26 @@ const VM = {
     },
     todosFilter: ko.observable("all"), // all - active - completed
 };
+
+const localTodo = localStorage.getItem("saveTodos-knockout");
+// localStorage.clear();
+VM.todos.subscribe(function () {
+    console.log("CHANGE!");
+    // localStorage.setItem("saveTodos-knockout", JSON.stringify(VM.todos()));
+    // console.log(VM.todos(), JSON.stringify(VM.todos()), JSON.parse(VM.todos()));
+
+    localStorage.setItem("saveTodos-knockout", ko.toJSON(VM.todos()));
+
+    // console.log(VM);
+    console.log("End of Changes!");
+    // console.log("S:",JSON.stringify(VM.todos()))
+});
+
+if (localTodo) {
+    // console.log("R:", localStorage.getItem("saveTodos-knockout"));
+    // VM.todos(localStorage.getItem("saveTodos-knockout"));
+    VM.todos(JSON.parse(localStorage.getItem("saveTodos-knockout")));
+}
 
 VM.showTodos = ko.computed(function () {
     let filteredList = function () {
@@ -116,19 +135,6 @@ VM.clearAll = function () {
 
 // const localTodo = localStorage.getItem("saveTodos-knockout");
 
-// localStorage.clear();
-VM.todos.subscribe(function () {
-    console.log("CHANGE!");
-    localStorage.setItem("saveTodos-knockout", JSON.stringify(VM));
-    // console.log(VM.todos(), JSON.stringify(VM.todos()), JSON.parse(VM.todos()));
-    console.log(VM)
-    console.log("End of Changes!");
-    // console.log("S:",JSON.stringify(VM.todos()))
-});
 
-if (localTodo) {
-    console.log("R:",localStorage.getItem("saveTodos-knockout"))
-    // VM.todos(localStorage.getItem("saveTodos-knockout"));
-}
 
 ko.applyBindings(VM);
