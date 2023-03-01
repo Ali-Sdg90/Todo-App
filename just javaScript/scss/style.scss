@@ -275,5 +275,10 @@ svg {
         justify-content: center;
         align-items: center;
         cursor: pointer;
+
+        &:nth-child(4),
+        &:nth-child(5) {
+            cursor: default;
+        }
     }
 }

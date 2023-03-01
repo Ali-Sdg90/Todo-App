@@ -284,4 +284,7 @@ svg {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+#filter-nav-text p:nth-child(4), #filter-nav-text p:nth-child(5) {
+  cursor: default;
 }/*# sourceMappingURL=style.css.map */

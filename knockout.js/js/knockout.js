@@ -18,34 +18,32 @@ const VM = {
             return this.todosFilter();
         }
     },
-};
+    todosFilterAll: function () {
+        console.log("all");
+        this.todosFilter("all");
+    },
+    todosFilterActive: function () {
+        console.log("active");
+        this.todosFilter("active");
+    },
+    todosFilterCompleted: function () {
+        console.log("completed");
+        this.todosFilter("completed");
+    },
+    clearAll: function () {
+        this.todos(
+            this.todos().filter(function (todo) {
+                return !VM.showTodos().includes(todo);
+            })
+        );
+    },
 
-VM.showTodos = ko.computed(function () {
-    let filteredList = function () {
-        switch (VM.todosFilter()) {
-            case "active":
-                return VM.todos().filter(function (todo) {
-                    return todo.isActive();
-                });
-            case "completed":
-                return VM.todos().filter(function (todo) {
-                    return !todo.isActive();
-                });
-            default:
-                return VM.todos();
+    addBr: function () {
+        if (!VM.showTodos().length) {
+            return "<br>";
         }
-    };
-    if (filteredList().length < 7) {
-        let filterTop = 35.5 - filteredList().length * 3.0 + "vh";
-        document.getElementById("filter-nav-background").style.top = filterTop;
-        document.getElementById("filter-nav-text").style.top = filterTop;
-    } else {
-        document.getElementById("filter-nav-background").style.top = "14.85vh";
-        document.getElementById("filter-nav-text").style.top = "14.85vh";
-    }
-    console.log(filteredList());
-    return filteredList();
-});
+    },
+};
 
 function addNewTodo(todoText) {
     this.todoText = todoText;
@@ -74,20 +72,34 @@ function addNewTodo(todoText) {
     });
 }
 
-VM.todosFilterAll = function () {
-    console.log("all");
-    VM.todosFilter("all");
-};
-VM.todosFilterActive = function () {
-    console.log("active");
-    VM.todosFilter("active");
-};
-VM.todosFilterCompleted = function () {
-    console.log("completed");
-    VM.todosFilter("completed");
-};
+VM.showTodos = ko.computed(function () {
+    let filteredList = function () {
+        switch (VM.todosFilter()) {
+            case "active":
+                return VM.todos().filter(function (todo) {
+                    return todo.isActive();
+                });
+            case "completed":
+                return VM.todos().filter(function (todo) {
+                    return !todo.isActive();
+                });
+            default:
+                return VM.todos();
+        }
+    };
+    if (filteredList().length < 7) {
+        let filterTop = 35.5 - filteredList().length * 3 + "vh";
+        document.getElementById("filter-nav-background").style.top = filterTop;
+        document.getElementById("filter-nav-text").style.top = filterTop;
+    } else {
+        document.getElementById("filter-nav-background").style.top = "14.85vh";
+        document.getElementById("filter-nav-text").style.top = "14.85vh";
+    }
+    console.log(filteredList());
+    return filteredList().slice(0).reverse();
+});
 
-VM.taskTasks = ko.computed(function () {
+taskTasks = ko.computed(function () {
     let output = "";
     if (VM.showTodos().length == 1) {
         output += "task";
@@ -99,19 +111,5 @@ VM.taskTasks = ko.computed(function () {
     }
     return output;
 });
-
-VM.clearAll = function () {
-    VM.todos(
-        VM.todos().filter(function (todo) {
-            return !VM.showTodos().includes(todo);
-        })
-    );
-};
-
-VM.addBr = function () {
-    if (!this.showTodos().length) {
-        return "<br>";
-    }
-};
 
 ko.applyBindings(VM);

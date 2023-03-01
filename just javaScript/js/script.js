@@ -124,8 +124,8 @@ function updateHTML(addNewTodo) {
             pendingFilter.textContent = "completed";
             break;
     }
-    if (filteredTodoSaves.length < 8) {
-        let filterTop = firstTopFilter - filteredTodoSaves.length * 2.95 + "vh";
+    if (filteredTodoSaves.length < 7) {
+        let filterTop = firstTopFilter - filteredTodoSaves.length * 3 + "vh";
         document.getElementById("filter-nav-background").style.top = filterTop;
         document.getElementById("filter-nav-text").style.top = filterTop;
     } else {
