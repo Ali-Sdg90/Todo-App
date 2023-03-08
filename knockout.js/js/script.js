@@ -4,6 +4,7 @@ const filterDivBackground = document.getElementsByClassName(
     "filter-div-background"
 );
 
+// style for nav btns
 for (let i = 0; i < 3; i++) {
     filtertext[i].addEventListener("click", function () {
         for (let j = 0; j < 3; j++) {

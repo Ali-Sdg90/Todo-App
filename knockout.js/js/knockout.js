@@ -1,9 +1,16 @@
 const todoInput = document.getElementById("todo-input");
 
+// View Model
 const VM = {
+    // All saved todos
     todos: ko.observableArray([]),
+
+    // Input value
     todoText: ko.observable(""),
+
+    // For edit todo
     acceptInput: ko.observable(true),
+
     addTodo: function () {
         if (this.acceptInput() && todoInput.value) {
             VM.todos.push(new addNewTodo(VM.todoText()));
@@ -11,7 +18,8 @@ const VM = {
         }
     },
     todosFilter: ko.observable("all"), // all - active - completed
-    padding: function () {
+
+    pending: function () {
         if (this.todosFilter() === "all") {
             return "";
         } else {
@@ -30,6 +38,7 @@ const VM = {
         console.log("completed");
         this.todosFilter("completed");
     },
+
     clearAll: function () {
         this.todos(
             this.todos().filter(function (todo) {
@@ -38,6 +47,7 @@ const VM = {
         );
     },
 
+    // Only if showTodos is empty
     addBr: function () {
         if (!VM.showTodos().length) {
             return "<br>";
@@ -45,6 +55,7 @@ const VM = {
     },
 };
 
+// Obj constructor for addTodo
 function addNewTodo(todoText) {
     this.todoText = todoText;
     this.isActive = ko.observable(true);
@@ -67,6 +78,8 @@ function addNewTodo(todoText) {
     this.deleteTodo = function () {
         VM.todos.remove(this);
     };
+
+    // Log changes in todo's isActive
     this.isActive.subscribe(function (value) {
         console.log(todoText, "=>", value);
     });
@@ -87,6 +100,8 @@ VM.showTodos = ko.computed(function () {
                 return VM.todos();
         }
     };
+
+    // Nav position
     if (filteredList().length < 7) {
         let filterTop = 35.5 - filteredList().length * 3 + "vh";
         document.getElementById("filter-nav-background").style.top = filterTop;
@@ -96,9 +111,12 @@ VM.showTodos = ko.computed(function () {
         document.getElementById("filter-nav-text").style.top = "14.85vh";
     }
     console.log(filteredList());
+
+    // New todo placed at the top of the list
     return filteredList().slice(0).reverse();
 });
 
+// remaining task text
 taskTasks = ko.computed(function () {
     let output = "";
     if (VM.showTodos().length == 1) {

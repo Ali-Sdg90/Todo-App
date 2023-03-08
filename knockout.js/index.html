@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>Todo App</title>
+        <title>Todo App + KnockoutJS</title>
     </head>
     <body>
         <div id="main-div">
@@ -24,14 +24,13 @@
                 <span id="add-btn" data-bind="click:addTodo">+</span>
             </form>
             <span data-bind="html:addBr()"></span>
+
             <div id="save-list" data-bind="foreach:showTodos">
                 <span>
                     <div
                         data-bind="text:todoText, css: { 'complete-todo': !isActive() }"
                     ></div>
-                    <!-- data-bind="click:editTodo" -->
                     <div data-bind="click:editTodo" class="edit-number">
-                        <!-- <div class="edit-number"> -->
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 30 30"
@@ -43,7 +42,6 @@
                             />
                         </svg>
                     </div>
-                    <!-- data-bind="click:changeCompleteState" -->
                     <div
                         data-bind="click:changeCompleteState"
                         class="complete-number"
@@ -107,6 +105,7 @@
                     </div>
                 </span>
             </div>
+
             <div id="last-line">
                 <span>
                     <span>You have</span>
@@ -114,18 +113,14 @@
                         id="todo-counter"
                         data-bind="text:showTodos().length"
                     ></span>
-                    <span id="pending-filter" data-bind="text:padding()"
+                    <span id="pending-filter" data-bind="text:pending()"
                         >pending</span
                     >
                     <span id="task-tasks" data-bind="text:taskTasks"
                         >tasks</span
                     >
                 </span>
-                <span
-                    id="clear-btn"
-                    data-bind="click:clearAll"
-                    >Clear All</span
-                >
+                <span id="clear-btn" data-bind="click:clearAll">Clear All</span>
             </div>
         </div>
 
@@ -147,7 +142,6 @@
                     </g>
                 </svg>
             </div>
-            <!-- data-bind="click:todosFilterActive" -->
             <div class="filter-div-background">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +159,6 @@
                     </g>
                 </svg>
             </div>
-            <!-- data-bind="click:todosFilterCompleted" -->
             <div class="filter-div-background">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -199,6 +192,7 @@
             <p></p>
             <p></p>
         </div>
+
         <script src="js/knockout-3.5.1.js"></script>
         <script src="js/knockout.js"></script>
         <script src="js/script.js"></script>
