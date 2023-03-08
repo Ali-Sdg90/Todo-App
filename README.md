@@ -46,6 +46,7 @@
     <li>SCSS</li>
     <li>CSS</li>
     <li>JavaScript</li>
+    <li>KnockoutJS</li>
 </ul>
 <h2>Author</h2>
 <ul>
@@ -77,6 +78,20 @@
             >
             |
             <a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/" target="_new"
+                >Jsfiddle</a
+            >
+        </p>
+    </li>
+    <li>
+        <p>
+            Todo Step 5 :
+            <a
+                href="https://github.com/Ali-Sdg90/Todo-App/tree/543a742de6327389adffd28ab8a93fe58f8ec82e"
+                target="_new"
+                >GitHub</a
+            >
+            |
+            <a href="https://jsfiddle.net/Ali_Sdg90/v7nac15g/4/" target="_new"
                 >Jsfiddle</a
             >
         </p>
