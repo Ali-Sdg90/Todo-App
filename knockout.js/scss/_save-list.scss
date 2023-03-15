@@ -1,0 +1,97 @@
+#save-list {
+    max-height: 42vh;
+    overflow-y: scroll;
+    width: 46.85vh;
+
+    & span {
+        position: relative;
+        padding-left: 1.7vh;
+        margin-top: 0.7vh;
+        font-size: $font-size-save-list;
+        height: 5.3vh;
+        display: flex;
+        align-items: center;
+        background: $light-gray;
+        border-radius: 0.42vh;
+        justify-content: space-between;
+        width: 44.9vh;
+        transition: opacity 0.5s, background 0.1s, transform 0.4s;
+
+        &:last-child {
+            margin-bottom: 0.7vh;
+        }
+
+        &:hover {
+            background: $dark-gray;
+
+            & .edit-number {
+                opacity: 0.95;
+
+                &:hover {
+                    background: $edit-number-color-hover;
+                }
+
+                &:active {
+                    background: $edit-number-color-active;
+                }
+            }
+            & .complete-number {
+                opacity: 0.95;
+
+                &:hover {
+                    background: $complete-number-color-hover;
+                }
+
+                &:active {
+                    background: $complete-number-color-active;
+                }
+            }
+            & .delete-number {
+                opacity: 0.95;
+
+                &:hover {
+                    background: $delete-number-color-hover;
+                }
+
+                &:active {
+                    background: $delete-number-color-active;
+                }
+            }
+        }
+
+        & div:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 0.7vh;
+        }
+    }
+}
+
+.edit-number {
+    @include list-btns();
+    right: 11.4vh;
+    background: $edit-number-color;
+}
+.complete-number {
+    @include list-btns();
+    right: 5.7vh;
+    background: $complete-number-color;
+}
+.delete-number {
+    @include list-btns();
+    border-radius: 0 0.4vh 0.4vh 0;
+    right: 0;
+    background: $delete-number-color;
+}
+
+svg {
+    width: 2.8vh;
+    height: 3.37vh;
+    cursor: pointer;
+}
+
+.complete-todo {
+    color: $complete-todo-text-color;
+    text-decoration: line-through;
+}

@@ -1,0 +1,42 @@
+#filter-nav-background {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    position: absolute;
+    top: 35.5vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50.5vh;
+
+    & svg {
+        width: 170%;
+        height: 4.5vh;
+        opacity: 1;
+    }
+
+    & div:first-child {
+        z-index: $z-index-bottom;
+    }
+}
+
+#filter-nav-text {
+    @extend #filter-nav-background;
+    gap: 1.964vh;
+    padding-left: 4.6vh;
+
+    & p {
+        z-index: $z-index-top;
+        width: 130%;
+        padding-bottom: 1.3vh;
+        font-size: $font-size-filter-nav-text;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:nth-child(4),
+        &:nth-child(5) {
+            cursor: default;
+        }
+    }
+}

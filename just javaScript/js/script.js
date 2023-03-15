@@ -229,10 +229,11 @@ function deleteFunc() {
     for (let i = 0; i < filteredTodoSaves.length; i++) {
         for (let j = 0; j < todoSaves.length; j++) {
             if (filteredTodoSaves[i] == todoSaves[j]) {
-                todoSaves.splice(j, 1);
+                delete todoSaves[j];
             }
         }
     }
+    todoSaves = todoSaves.filter((value) => Object.keys(value).length !== 0);
     localStorage.setItem("saveTodos", JSON.stringify(todoSaves));
 }
 

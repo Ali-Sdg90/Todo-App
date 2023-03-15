@@ -1,0 +1,100 @@
+h1 {
+    font-weight: 600;
+    margin: 1.4vh 0;
+    font-size: $font-size-h1;
+}
+
+br {
+    display: block;
+    height: 0.7vh;
+    content: "";
+}
+
+#main-div {
+    background: $main-background;
+    width: 50.5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1.4vh rgba(0, 0, 0, 0.397);
+    padding: 2.8vh;
+    padding-bottom: 2.1vh;
+    position: relative;
+}
+
+#todo-input {
+    padding: 0.7vh 1.7vh;
+    margin: 1.4vh 0 0.7vh;
+    font-size: $font-size-input;
+    color: $input-text-color;
+    height: 5.4vh;
+    width: 38.5vh;
+    border: 0.14vh solid rgb(114, 114, 114);
+    transition: background 0.1s;
+
+    &::selection {
+        background: $dark-purple;
+        color: white;
+    }
+
+    &:focus {
+        color: $input-text-color-active;
+        cursor: auto;
+    }
+}
+
+#add-btn {
+    width: 5.75vh;
+    height: 5.33vh;
+    display: inline-flex;
+    color: white;
+    background-color: $dark-purple;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: $font-size-add-btn;
+    padding-bottom: 0.7vh;
+    position: relative;
+    top: 1.12vh;
+    cursor: pointer;
+    transition: background 0.1s;
+
+    &:hover {
+        background: $light-purple;
+    }
+
+    &:active {
+        background: $dark-purple;
+    }
+}
+
+.change-add-btn {
+    font-size: $font-size-change-add-btn !important;
+    padding: 0.5vh;
+}
+
+#last-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.1vh;
+}
+
+#clear-btn {
+    background: $dark-purple;
+    color: white;
+    padding: 1vh 1.12vh;
+    position: relative;
+    top: -1.12vh;
+    border-radius: 0.42vh;
+    cursor: pointer;
+    transition: background 0.1s;
+
+    &:hover {
+        background: $light-purple;
+    }
+
+    &:active {
+        background: $dark-purple;
+    }
+}
