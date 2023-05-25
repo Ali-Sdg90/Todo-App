@@ -4,6 +4,7 @@
     and clear tasks. The app uses the DOM to manipulate the HTML and
     localStorage to save the tasks.
 </p>
+<img src="Assets/1.png" alt="Todo-App-img" />
 <h2>Getting Started</h2>
 <p>
     To get started, simply clone or download the repository and open the
