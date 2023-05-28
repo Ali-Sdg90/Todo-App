@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
   border-radius: 0.7vh;
-  font-size: 2.24vh;
+  font-size: 16px;
   cursor: default;
 }
 
@@ -62,7 +62,7 @@ body {
   z-index: 2;
   width: 130%;
   padding-bottom: 1.3vh;
-  font-size: 1.68vh;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ body {
 h1 {
   font-weight: 600;
   margin: 1.4vh 0;
-  font-size: 4.62vh;
+  font-size: 33px;
 }
 
 br {
@@ -100,7 +100,7 @@ br {
 #todo-input {
   padding: 0.7vh 1.7vh;
   margin: 1.4vh 0 0.7vh;
-  font-size: 2.5vh;
+  font-size: 17px;
   color: rgb(103, 103, 103);
   height: 5.4vh;
   width: 38.5vh;
@@ -125,7 +125,7 @@ br {
   justify-content: center;
   align-items: center;
   font-family: cursive;
-  font-size: 5.6vh;
+  font-size: 40px;
   padding-bottom: 0.7vh;
   position: relative;
   top: 1.12vh;
@@ -140,8 +140,125 @@ br {
 }
 
 .change-add-btn {
-  font-size: 4.8vh !important;
+  font-size: 34px !important;
   padding: 0.5vh;
+}
+
+#save-list {
+  max-height: 42vh;
+  overflow-y: scroll;
+  width: 46.85vh;
+}
+#save-list span {
+  position: relative;
+  padding-left: 1.7vh;
+  margin-top: 0.7vh;
+  font-size: 17px;
+  height: 5.3vh;
+  display: flex;
+  align-items: center;
+  background: rgb(237, 237, 237);
+  border-radius: 0.42vh;
+  justify-content: space-between;
+  width: 44.9vh;
+  transition: opacity 0.5s, background 0.1s, transform 0.4s;
+}
+#save-list span:last-child {
+  margin-bottom: 0.7vh;
+}
+#save-list span:hover {
+  background: rgb(221, 221, 221);
+}
+#save-list span:hover div[id*=edit-number] {
+  opacity: 0.95;
+}
+#save-list span:hover div[id*=edit-number]:hover {
+  background: rgb(139, 126, 255);
+}
+#save-list span:hover div[id*=edit-number]:active {
+  background: rgb(109, 109, 255);
+}
+#save-list span:hover div[id*=complete-number] {
+  opacity: 0.95;
+}
+#save-list span:hover div[id*=complete-number]:hover {
+  background: rgb(142, 253, 199);
+}
+#save-list span:hover div[id*=complete-number]:active {
+  background: rgb(109, 255, 177);
+}
+#save-list span:hover div[id*=delete-number] {
+  opacity: 0.95;
+}
+#save-list span:hover div[id*=delete-number]:hover {
+  background: rgb(255, 137, 137);
+}
+#save-list span:hover div[id*=delete-number]:active {
+  background: rgb(255, 109, 109);
+}
+#save-list span div:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 0.7vh;
+}
+
+div[id*=edit-number] {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8vh;
+  height: 100%;
+  width: 5.75vh;
+  font-family: cursive;
+  border-radius: 0;
+  cursor: pointer;
+  position: absolute;
+  transition: opacity 0.25s 0.05s, background 0.2s !important;
+  right: 11.4vh;
+  background: rgb(109, 109, 255);
+}
+
+div[id*=complete-number] {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8vh;
+  height: 100%;
+  width: 5.75vh;
+  font-family: cursive;
+  border-radius: 0;
+  cursor: pointer;
+  position: absolute;
+  transition: opacity 0.25s 0.05s, background 0.2s !important;
+  right: 5.7vh;
+  background: rgb(109, 255, 177);
+}
+
+div[id*=delete-number] {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8vh;
+  height: 100%;
+  width: 5.75vh;
+  font-family: cursive;
+  border-radius: 0;
+  cursor: pointer;
+  position: absolute;
+  transition: opacity 0.25s 0.05s, background 0.2s !important;
+  border-radius: 0 0.4vh 0.4vh 0;
+  right: 0;
+  background: rgb(255, 109, 109);
+}
+
+svg {
+  width: 2.8vh;
+  height: 3.37vh;
+  cursor: pointer;
 }
 
 #last-line {
@@ -165,123 +282,6 @@ br {
 }
 #clear-btn:active {
   background: rgba(127, 48, 255, 0.886);
-}
-
-#save-list {
-  max-height: 42vh;
-  overflow-y: scroll;
-  width: 46.85vh;
-}
-#save-list span {
-  position: relative;
-  padding-left: 1.7vh;
-  margin-top: 0.7vh;
-  font-size: 2.5vh;
-  height: 5.3vh;
-  display: flex;
-  align-items: center;
-  background: rgb(237, 237, 237);
-  border-radius: 0.42vh;
-  justify-content: space-between;
-  width: 44.9vh;
-  transition: opacity 0.5s, background 0.1s, transform 0.4s;
-}
-#save-list span:last-child {
-  margin-bottom: 0.7vh;
-}
-#save-list span:hover {
-  background: rgb(221, 221, 221);
-}
-#save-list span:hover .edit-number {
-  opacity: 0.95;
-}
-#save-list span:hover .edit-number:hover {
-  background: rgb(139, 126, 255);
-}
-#save-list span:hover .edit-number:active {
-  background: rgb(109, 109, 255);
-}
-#save-list span:hover .complete-number {
-  opacity: 0.95;
-}
-#save-list span:hover .complete-number:hover {
-  background: rgb(142, 253, 199);
-}
-#save-list span:hover .complete-number:active {
-  background: rgb(109, 255, 177);
-}
-#save-list span:hover .delete-number {
-  opacity: 0.95;
-}
-#save-list span:hover .delete-number:hover {
-  background: rgb(255, 137, 137);
-}
-#save-list span:hover .delete-number:active {
-  background: rgb(255, 109, 109);
-}
-#save-list span div:first-child {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding-right: 0.7vh;
-}
-
-.edit-number {
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8vh;
-  height: 100%;
-  width: 5.75vh;
-  font-family: cursive;
-  border-radius: 0;
-  cursor: pointer;
-  position: absolute;
-  transition: opacity 0.25s 0.05s, background 0.2s !important;
-  right: 11.4vh;
-  background: rgb(109, 109, 255);
-}
-
-.complete-number {
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8vh;
-  height: 100%;
-  width: 5.75vh;
-  font-family: cursive;
-  border-radius: 0;
-  cursor: pointer;
-  position: absolute;
-  transition: opacity 0.25s 0.05s, background 0.2s !important;
-  right: 5.7vh;
-  background: rgb(109, 255, 177);
-}
-
-.delete-number {
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8vh;
-  height: 100%;
-  width: 5.75vh;
-  font-family: cursive;
-  border-radius: 0;
-  cursor: pointer;
-  position: absolute;
-  transition: opacity 0.25s 0.05s, background 0.2s !important;
-  border-radius: 0 0.4vh 0.4vh 0;
-  right: 0;
-  background: rgb(255, 109, 109);
-}
-
-svg {
-  width: 2.8vh;
-  height: 3.37vh;
-  cursor: pointer;
 }
 
 .complete-todo {
