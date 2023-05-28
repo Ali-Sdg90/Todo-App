@@ -95,7 +95,7 @@ function updateHTML(addNewTodo) {
         const newTodo = document.getElementById(
             `todo-number${filteredTodoSaves.length - 1}`
         );
-        newTodo.style.transform = "translate(0, -3.5vh)";
+        newTodo.style.transform = "translate(0, -25px)";
         newTodo.style.opacity = "0";
         setTimeout(() => {
             newTodo.style.opacity = "1";
@@ -124,14 +124,18 @@ function updateHTML(addNewTodo) {
             pendingFilter.textContent = "completed";
             break;
     }
-    if (filteredTodoSaves.length < 7) {
-        let filterTop = firstTopFilter - filteredTodoSaves.length * 3 + "vh";
-        document.getElementById("filter-nav-background").style.top = filterTop;
-        document.getElementById("filter-nav-text").style.top = filterTop;
-    } else {
-        document.getElementById("filter-nav-background").style.top = "14.85vh";
-        document.getElementById("filter-nav-text").style.top = "14.85vh";
-    }
+    // if (filteredTodoSaves.length < 7) {
+    //     let filterTop =
+    //         firstTopFilter -
+    //         filteredTodoSaves.length *
+    //             ((3 * document.documentElement.scrollHeight) / 704) +
+    //         "vh";
+    //     document.getElementById("filter-nav-background").style.top = filterTop;
+    //     document.getElementById("filter-nav-text").style.top = filterTop;
+    // } else {
+    //     document.getElementById("filter-nav-background").style.top = "14.85vh";
+    //     document.getElementById("filter-nav-text").style.top = "14.85vh";
+    // }
 }
 
 // Function of edit button on tasks
@@ -218,8 +222,8 @@ document.addEventListener("keyup", function (event) {
     }
 });
 
-// Double-click on the Clear All button to delete the task on the filteredTodoSaves :
-clearAll.addEventListener("dblclick", function () {
+// Click on the Clear All button to delete the task on the filteredTodoSaves :
+clearAll.addEventListener("click", function () {
     deleteFunc();
     updateHTML(false);
 });
@@ -266,3 +270,31 @@ for (let i = 0; i < 3; i++) {
         updateHTML(false);
     });
 }
+
+function getDistanceFromTop(element) {
+    let distance = 0;
+    while (element) {
+        distance += element.offsetTop;
+        element = element.offsetParent;
+    }
+    return distance;
+}
+
+let initialPageHeight = window.innerHeight;
+
+function checkPageHeightChange() {
+    let currentHeight = window.innerHeight;
+    if (currentHeight !== initialPageHeight) {
+        let mainDiv = document.getElementById("main-div");
+        let distanceFromTop = getDistanceFromTop(mainDiv);
+        document.getElementById("filter-nav-text").style.top = `${
+            distanceFromTop - 103
+        }px`;
+        document.getElementById("filter-nav-background").style.top = `${
+            distanceFromTop - 103
+        }px`;
+        console.log(distanceFromTop);
+    }
+}
+
+window.addEventListener("resize", checkPageHeightChange);

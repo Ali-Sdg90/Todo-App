@@ -1,24 +1,24 @@
 #save-list {
-    max-height: 42vh;
+    max-height: 300px;
     overflow-y: scroll;
-    width: 46.85vh;
+    width: 330px;
 
     & span {
         position: relative;
-        padding-left: 1.7vh;
-        margin-top: 0.7vh;
+        padding-left: 12.11px;
+        margin-top: 5px;
         font-size: $font-size-save-list;
-        height: 5.3vh;
+        height: 37.822px;
         display: flex;
         align-items: center;
         background: $light-gray;
-        border-radius: 0.42vh;
+        border-radius: 6px;
         justify-content: space-between;
-        width: 44.9vh;
+        width: 315px;
         transition: opacity 0.5s, background 0.1s, transform 0.4s;
 
         &:last-child {
-            margin-bottom: 0.7vh;
+            margin-bottom: 5px;
         }
 
         &:hover {
@@ -63,47 +63,47 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            padding-right: 0.7vh;
+            padding-right: 5px;
         }
     }
 }
 
 div[id*="edit-number"] {
     @include list-btns();
-    right: 11.4vh;
+    right: 81.3px;
     background: $edit-number-color;
 }
 div[id*="complete-number"] {
     @include list-btns();
-    right: 5.7vh;
+    right: 40.63px;
     background: $complete-number-color;
 }
 div[id*="delete-number"] {
     @include list-btns();
-    border-radius: 0 0.4vh 0.4vh 0;
+    border-radius: 0 0.05612px 0.05612px 0;
     right: 0;
     background: $delete-number-color;
 }
 
 svg {
-    width: 2.8vh;
-    height: 3.37vh;
+    width: 20px;
+    height: 24px;
     cursor: pointer;
 }
 
 #last-line {
     display: flex;
     justify-content: space-between;
-    margin-top: 2.1vh;
+    margin-top: 15px;
 }
 
 #clear-btn {
     background: $dark-purple;
     color: white;
-    padding: 1vh 1.12vh;
+    padding: 7px 8px;
     position: relative;
-    top: -1.12vh;
-    border-radius: 0.42vh;
+    top: -8px;
+    border-radius: 3px;
     cursor: pointer;
     transition: background 0.1s;
 

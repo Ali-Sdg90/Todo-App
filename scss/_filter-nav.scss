@@ -3,14 +3,14 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
     position: absolute;
-    top: 35.5vh;
+    top: 254px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50.5vh;
+    width: 356px;
 
     & svg {
         width: 170%;
-        height: 4.5vh;
+        height: 32px;
         opacity: 1;
     }
 
@@ -21,13 +21,13 @@
 
 #filter-nav-text {
     @extend #filter-nav-background;
-    gap: 1.964vh;
-    padding-left: 4.6vh;
+    gap: 14px;
+    padding-left: 32.8px;
 
     & p {
         z-index: $z-index-top;
         width: 130%;
-        padding-bottom: 1.3vh;
+        padding-bottom: 8px;
         font-size: $font-size-filter-nav-text;
         display: flex;
         justify-content: center;

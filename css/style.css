@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  border-radius: 0.7vh;
+  border-radius: 5px;
   font-size: 16px;
   cursor: default;
 }
@@ -13,16 +13,16 @@
 }
 
 ::-webkit-scrollbar {
-  width: 1.4vh;
+  width: 12px;
 }
 ::-webkit-scrollbar-track {
   background: white;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(166, 166, 166, 0.674);
-  border-radius: 1.4vh;
-  outline: 0.3vh solid white;
-  outline-offset: -0.3vh;
+  border-radius: 10px;
+  outline: 3px solid white;
+  outline-offset: -2.5px;
   transition: background 0.5s;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -40,14 +40,14 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
   position: absolute;
-  top: 35.5vh;
+  top: 254px;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50.5vh;
+  width: 356px;
 }
 #filter-nav-background svg, #filter-nav-text svg {
   width: 170%;
-  height: 4.5vh;
+  height: 32px;
   opacity: 1;
 }
 #filter-nav-background div:first-child, #filter-nav-text div:first-child {
@@ -55,13 +55,13 @@ body {
 }
 
 #filter-nav-text {
-  gap: 1.964vh;
-  padding-left: 4.6vh;
+  gap: 14px;
+  padding-left: 32.8px;
 }
 #filter-nav-text p {
   z-index: 2;
   width: 130%;
-  padding-bottom: 1.3vh;
+  padding-bottom: 8px;
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -74,37 +74,37 @@ body {
 
 h1 {
   font-weight: 600;
-  margin: 1.4vh 0;
+  margin: 10px 0;
   font-size: 33px;
 }
 
 br {
   display: block;
-  height: 0.7vh;
+  height: 5px;
   content: "";
 }
 
 #main-div {
   background: white;
-  width: 50.5vh;
+  width: 360px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 1.4vh rgba(0, 0, 0, 0.397);
-  padding: 2.8vh;
-  padding-bottom: 2.1vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
+  padding: 19.5px;
+  padding-bottom: 15px;
   position: relative;
 }
 
 #todo-input {
-  padding: 0.7vh 1.7vh;
-  margin: 1.4vh 0 0.7vh;
+  padding: 5px 12px;
+  margin: 10px 0 5px;
   font-size: 17px;
   color: rgb(103, 103, 103);
-  height: 5.4vh;
-  width: 38.5vh;
-  border: 0.14vh solid rgb(114, 114, 114);
+  height: 39px;
+  width: 275px;
+  border: 2px solid rgb(114, 114, 114);
   transition: background 0.1s;
 }
 #todo-input::selection {
@@ -117,8 +117,8 @@ br {
 }
 
 #add-btn {
-  width: 5.75vh;
-  height: 5.33vh;
+  width: 41px;
+  height: 38px;
   display: inline-flex;
   color: white;
   background-color: rgba(127, 48, 255, 0.886);
@@ -126,9 +126,9 @@ br {
   align-items: center;
   font-family: cursive;
   font-size: 40px;
-  padding-bottom: 0.7vh;
+  padding-bottom: 5px;
   position: relative;
-  top: 1.12vh;
+  top: 8px;
   cursor: pointer;
   transition: background 0.1s;
 }
@@ -141,30 +141,30 @@ br {
 
 .change-add-btn {
   font-size: 34px !important;
-  padding: 0.5vh;
+  padding: 4px;
 }
 
 #save-list {
-  max-height: 42vh;
+  max-height: 300px;
   overflow-y: scroll;
-  width: 46.85vh;
+  width: 330px;
 }
 #save-list span {
   position: relative;
-  padding-left: 1.7vh;
-  margin-top: 0.7vh;
+  padding-left: 12.11px;
+  margin-top: 5px;
   font-size: 17px;
-  height: 5.3vh;
+  height: 37.822px;
   display: flex;
   align-items: center;
   background: rgb(237, 237, 237);
-  border-radius: 0.42vh;
+  border-radius: 6px;
   justify-content: space-between;
-  width: 44.9vh;
+  width: 315px;
   transition: opacity 0.5s, background 0.1s, transform 0.4s;
 }
 #save-list span:last-child {
-  margin-bottom: 0.7vh;
+  margin-bottom: 5px;
 }
 #save-list span:hover {
   background: rgb(221, 221, 221);
@@ -200,7 +200,7 @@ br {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-right: 0.7vh;
+  padding-right: 5px;
 }
 
 div[id*=edit-number] {
@@ -208,15 +208,15 @@ div[id*=edit-number] {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.8vh;
+  font-size: 20px;
   height: 100%;
-  width: 5.75vh;
+  width: 41px;
   font-family: cursive;
   border-radius: 0;
   cursor: pointer;
   position: absolute;
   transition: opacity 0.25s 0.05s, background 0.2s !important;
-  right: 11.4vh;
+  right: 81.3px;
   background: rgb(109, 109, 255);
 }
 
@@ -225,15 +225,15 @@ div[id*=complete-number] {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.8vh;
+  font-size: 20px;
   height: 100%;
-  width: 5.75vh;
+  width: 41px;
   font-family: cursive;
   border-radius: 0;
   cursor: pointer;
   position: absolute;
   transition: opacity 0.25s 0.05s, background 0.2s !important;
-  right: 5.7vh;
+  right: 40.63px;
   background: rgb(109, 255, 177);
 }
 
@@ -242,38 +242,38 @@ div[id*=delete-number] {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.8vh;
+  font-size: 20px;
   height: 100%;
-  width: 5.75vh;
+  width: 41px;
   font-family: cursive;
   border-radius: 0;
   cursor: pointer;
   position: absolute;
   transition: opacity 0.25s 0.05s, background 0.2s !important;
-  border-radius: 0 0.4vh 0.4vh 0;
+  border-radius: 0 0.05612px 0.05612px 0;
   right: 0;
   background: rgb(255, 109, 109);
 }
 
 svg {
-  width: 2.8vh;
-  height: 3.37vh;
+  width: 20px;
+  height: 24px;
   cursor: pointer;
 }
 
 #last-line {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.1vh;
+  margin-top: 15px;
 }
 
 #clear-btn {
   background: rgba(127, 48, 255, 0.886);
   color: white;
-  padding: 1vh 1.12vh;
+  padding: 7px 8px;
   position: relative;
-  top: -1.12vh;
-  border-radius: 0.42vh;
+  top: -8px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background 0.1s;
 }
