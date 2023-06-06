@@ -10,13 +10,18 @@ br {
     content: "";
 }
 
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #main-div {
     background: $main-background;
     width: 360px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
     padding: 19.5px;
     padding-bottom: 15px;

@@ -124,18 +124,6 @@ function updateHTML(addNewTodo) {
             pendingFilter.textContent = "completed";
             break;
     }
-    // if (filteredTodoSaves.length < 7) {
-    //     let filterTop =
-    //         firstTopFilter -
-    //         filteredTodoSaves.length *
-    //             ((3 * document.documentElement.scrollHeight) / 704) +
-    //         "vh";
-    //     document.getElementById("filter-nav-background").style.top = filterTop;
-    //     document.getElementById("filter-nav-text").style.top = filterTop;
-    // } else {
-    //     document.getElementById("filter-nav-background").style.top = "14.85vh";
-    //     document.getElementById("filter-nav-text").style.top = "14.85vh";
-    // }
 }
 
 // Function of edit button on tasks
@@ -279,22 +267,3 @@ function getDistanceFromTop(element) {
     }
     return distance;
 }
-
-let initialPageHeight = window.innerHeight;
-
-function checkPageHeightChange() {
-    let currentHeight = window.innerHeight;
-    if (currentHeight !== initialPageHeight) {
-        let mainDiv = document.getElementById("main-div");
-        let distanceFromTop = getDistanceFromTop(mainDiv);
-        document.getElementById("filter-nav-text").style.top = `${
-            distanceFromTop - 103
-        }px`;
-        document.getElementById("filter-nav-background").style.top = `${
-            distanceFromTop - 103
-        }px`;
-        console.log(distanceFromTop);
-    }
-}
-
-window.addEventListener("resize", checkPageHeightChange);

@@ -35,14 +35,17 @@ body {
   background: linear-gradient(to top, rgb(48, 72, 255), rgb(0, 238, 255));
 }
 
+#filter-nav {
+  position: relative;
+  transform: translate(-190px, -22px);
+  z-index: 3;
+}
+
 #filter-nav-background, #filter-nav-text {
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
-  position: absolute;
-  top: 254px;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 356px;
 }
 #filter-nav-background svg, #filter-nav-text svg {
@@ -55,6 +58,8 @@ body {
 }
 
 #filter-nav-text {
+  position: absolute;
+  top: 7px;
   gap: 14px;
   padding-left: 32.8px;
 }
@@ -84,13 +89,18 @@ br {
   content: "";
 }
 
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #main-div {
   background: white;
   width: 360px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
   padding: 19.5px;
   padding-bottom: 15px;
