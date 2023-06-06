@@ -59,7 +59,7 @@ body {
 
 #filter-nav-text {
   position: absolute;
-  top: 7px;
+  top: 6px;
   gap: 14px;
   padding-left: 32.8px;
 }
@@ -164,7 +164,7 @@ br {
   padding-left: 12.11px;
   margin-top: 5px;
   font-size: 17px;
-  height: 37.822px;
+  height: 37.8px;
   display: flex;
   align-items: center;
   background: rgb(237, 237, 237);
@@ -260,12 +260,12 @@ div[id*=delete-number] {
   cursor: pointer;
   position: absolute;
   transition: opacity 0.25s 0.05s, background 0.2s !important;
-  border-radius: 0 0.05612px 0.05612px 0;
+  border-radius: 0 6px 6px 0;
   right: 0;
   background: rgb(255, 109, 109);
 }
 
-svg {
+.svg {
   width: 20px;
   height: 24px;
   cursor: pointer;

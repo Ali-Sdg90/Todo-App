@@ -8,7 +8,7 @@
         padding-left: 12.11px;
         margin-top: 5px;
         font-size: $font-size-save-list;
-        height: 37.822px;
+        height: 37.8px;
         display: flex;
         align-items: center;
         background: $light-gray;
@@ -80,12 +80,12 @@ div[id*="complete-number"] {
 }
 div[id*="delete-number"] {
     @include list-btns();
-    border-radius: 0 0.05612px 0.05612px 0;
+    border-radius: 0 6px 6px 0;
     right: 0;
     background: $delete-number-color;
 }
 
-svg {
+.svg {
     width: 20px;
     height: 24px;
     cursor: pointer;

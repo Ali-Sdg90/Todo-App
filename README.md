@@ -47,11 +47,6 @@
     <li>SCSS</li>
     <li>CSS</li>
     <li>JavaScript</li>
-    <li>KnockoutJS</li>
-</ul>
-<h2>Author</h2>
-<ul>
-    <li><a href="https://github.com/Ali-Sdg90" target="_new">Ali-Sdg90</a></li>
 </ul>
 <h2>Steps</h2>
 <ul>
@@ -73,7 +68,7 @@
         <p>
             Todo Step 4 :
             <a
-                href="https://github.com/Ali-Sdg90/Todo-App/tree/1ba75aa5ab8cb51396f7a46678a6b9791e9a0f14"
+                href="https://github.com/Ali-Sdg90/Todo-App"
                 target="_new"
                 >GitHub</a
             >
@@ -87,7 +82,7 @@
         <p>
             Todo Step 5 :
             <a
-                href="https://github.com/Ali-Sdg90/Todo-App/tree/543a742de6327389adffd28ab8a93fe58f8ec82e"
+                href="https://github.com/Ali-Sdg90/Todo-App-KnockoutJS"
                 target="_new"
                 >GitHub</a
             >
