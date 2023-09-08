@@ -8,6 +8,10 @@
   cursor: default;
 }
 
+::-moz-selection {
+  background: transparent;
+}
+
 ::selection {
   background: transparent;
 }
@@ -23,6 +27,7 @@
   border-radius: 10px;
   outline: 3px solid white;
   outline-offset: -2.5px;
+  -webkit-transition: background 0.5s;
   transition: background 0.5s;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -33,6 +38,8 @@ body {
   width: 100%;
   height: 100vh;
   background: linear-gradient(to top, rgb(48, 72, 255), rgb(0, 238, 255));
+  overflow: hidden;
+  transform: scale(1.2);
 }
 
 #filter-nav {
@@ -116,6 +123,10 @@ br {
   width: 275px;
   border: 2px solid rgb(114, 114, 114);
   transition: background 0.1s;
+}
+#todo-input::-moz-selection {
+  background: rgba(127, 48, 255, 0.886);
+  color: white;
 }
 #todo-input::selection {
   background: rgba(127, 48, 255, 0.886);

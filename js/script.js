@@ -43,7 +43,7 @@ function filterTodoSavesFunc() {
     }
 }
 
-// Update the DOM
+// Update DOM
 // Create new tasks with buttons and addEventListeners to them
 // Set the position of navigation filters
 // Update pending tasks in different modes :
