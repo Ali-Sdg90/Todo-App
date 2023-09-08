@@ -4,7 +4,7 @@
     and clear tasks. The app uses the DOM to manipulate the HTML and
     localStorage to save the tasks.
 </p>
-<img src="Assets/1.png" alt="Todo-App-img" />
+<img src="Assets/readme-img.png" alt="Todo-App-img" />
 <h2>Getting Started</h2>
 <p>
     To get started, simply clone or download the repository and open the
@@ -60,7 +60,7 @@
             >
             |
             <a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/" target="_new"
-                >Jsfiddle</a
+                >JSFiddle</a
             >
         </p>
     </li>
@@ -74,7 +74,7 @@
             >
             |
             <a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/" target="_new"
-                >Jsfiddle</a
+                >JSFiddle</a
             >
         </p>
     </li>
@@ -88,7 +88,21 @@
             >
             |
             <a href="https://jsfiddle.net/Ali_Sdg90/v7nac15g/4/" target="_new"
-                >Jsfiddle</a
+                >JSFiddle</a
+            >
+        </p>
+    </li>
+    <li>
+        <p>
+            Todo Step 6 :
+            <a
+                href="https://github.com/Ali-Sdg90/Todo-App"
+                target="_new"
+                >GitHub</a
+            >
+            |
+            <a href="https://jsfiddle.net/Ali_Sdg90/bfLrwtxg/2/" target="_new"
+                >JSFiddle</a
             >
         </p>
     </li>
