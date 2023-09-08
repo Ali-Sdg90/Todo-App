@@ -57,14 +57,14 @@
             <td>Step 3 (base file)</td>
             <td><a href="https://github.com/Ali-Sdg90/Todo-App/tree/2471d1bfbd34de78b451684a90d3c6db4ac20350" target="_new">Link</a></td>
             <td><a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/" target="_new">Link</a></td>
-            <td><a href="#">---</a></td>
+            <td>---</td>
             <td>Coming soon...</td>
         </tr>
         <tr>
             <td>Step 4 (todo btns + SCSS)</td>
             <td><a href="https://github.com/Ali-Sdg90/Todo-App" target="_new">Link</a></td>
             <td><a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/" target="_new">Link</a></td>
-            <td><a href="#">---</a></td>
+            <td>---</td>
             <td>Coming soon...</td>
         </tr>
         <tr>
