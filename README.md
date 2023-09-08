@@ -41,83 +41,52 @@
     <code>completed</code>) and the <code>updateHTML(addNewTodo)</code> function
     is used to update the DOM and refresh the list of tasks.
 </p>
-<h2>Built With</h2>
-<ul>
-    <li>HTML</li>
-    <li>SCSS</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-</ul>
 <h2>Steps</h2>
-<ul>
-    <li>
-        <p>
-            Todo Step 3 :
-            <a
-                href="https://github.com/Ali-Sdg90/Todo-App/tree/2471d1bfbd34de78b451684a90d3c6db4ac20350"
-                target="_new"
-                >GitHub</a
-            >
-            |
-            <a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/" target="_new"
-                >JSFiddle</a
-            >
-        </p>
-    </li>
-    <li>
-        <p>
-            Todo Step 4 :
-            <a
-                href="https://github.com/Ali-Sdg90/Todo-App"
-                target="_new"
-                >GitHub</a
-            >
-            |
-            <a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/" target="_new"
-                >JSFiddle</a
-            >
-        </p>
-    </li>
-    <li>
-        <p>
-            Todo Step 5 :
-            <a
-                href="https://github.com/Ali-Sdg90/Todo-App-KnockoutJS"
-                target="_new"
-                >GitHub</a
-            >
-            |
-            <a href="https://jsfiddle.net/Ali_Sdg90/v7nac15g/4/" target="_new"
-                >JSFiddle</a
-            >
-        </p>
-    </li>
-    <li>
-        <p>
-            Todo Step 6 (localStorage) :
-            <a
-                href="https://github.com/Ali-Sdg90/Todo-App"
-                target="_new"
-                >GitHub</a
-            >
-            |
-            <a href="https://jsfiddle.net/Ali_Sdg90/tz105ux4/1/" target="_new"
-                >JSFiddle</a
-            >
-        </p>
-    </li>
-    <li>
-        <p>
-            Todo Step 6 (Firebase) :
-            <a
-                href="https://github.com/Ali-Sdg90/Todo-App-Firebase"
-                target="_new"
-                >GitHub</a
-            >
-            |
-            <a href="https://jsfiddle.net/Ali_Sdg90/bfLrwtxg/2/" target="_new"
-                >JSFiddle</a
-            >
-        </p>
-    </li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>Steps</th>
+            <th>Github</th>
+            <th>JSFiddle</th>
+            <th>Live Demo</th>
+            <th>Showcase Video</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Step 3 (base file)</td>
+            <td><a href="https://github.com/Ali-Sdg90/Todo-App/tree/2471d1bfbd34de78b451684a90d3c6db4ac20350" target="_new">Link</a></td>
+            <td><a href="https://jsfiddle.net/Ali_Sdg90/v60okbum/" target="_new">Link</a></td>
+            <td><a href="#">---</a></td>
+            <td>Coming soon...</td>
+        </tr>
+        <tr>
+            <td>Step 4 (todo btns + SCSS)</td>
+            <td><a href="https://github.com/Ali-Sdg90/Todo-App" target="_new">Link</a></td>
+            <td><a href="https://jsfiddle.net/Ali_Sdg90/k4Lwxare/" target="_new">Link</a></td>
+            <td><a href="#">---</a></td>
+            <td>Coming soon...</td>
+        </tr>
+        <tr>
+            <td>Step 5 (knockout.js)</td>
+            <td><a href="https://github.com/Ali-Sdg90/Todo-App-KnockoutJS" target="_new">Link</a></td>
+            <td><a href="https://jsfiddle.net/Ali_Sdg90/v7nac15g/4/" target="_new">Link</a></td>
+            <td><a href="https://ali-sdg90.github.io/Todo-App-KnockoutJS/">Link</a></td>
+            <td>Coming soon...</td>
+        </tr>
+        <tr>
+            <td>Step 6 (localStorage)</td>
+            <td><a href="https://github.com/Ali-Sdg90/Todo-App" target="_new">Link</a></td>
+            <td><a href="https://jsfiddle.net/Ali_Sdg90/tz105ux4/1/" target="_new">Link</a></td>
+            <td><a href="https://ali-sdg90.github.io/Todo-App/">Link</a></td>
+            <td>Coming soon...</td>
+        </tr>
+        <tr>
+            <td>Step 6 (Firebase)</td>
+            <td><a href="https://github.com/Ali-Sdg90/Todo-App-Firebase" target="_new">Link</a></td>
+            <td><a href="https://jsfiddle.net/Ali_Sdg90/bfLrwtxg/2/" target="_new">Link</a></td>
+            <td><a href="https://ali-sdg9093-todo-app.web.app/">Link</a></td>
+            <td>Coming soon...</td>
+        </tr>
+    </tbody>
+</table>
