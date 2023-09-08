@@ -1,4 +1,4 @@
-<h1>Todo App</h1>
+<h1>Todo App🗂</h1>
 <p>
     This is a simple JavaScript based Todo app that allows users to add, filter,
     and clear tasks. The app uses the DOM to manipulate the HTML and
@@ -90,3 +90,4 @@
         </tr>
     </tbody>
 </table>
+<p>Enjoy using the app❤️</p>
