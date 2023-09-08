@@ -94,9 +94,23 @@
     </li>
     <li>
         <p>
-            Todo Step 6 :
+            Todo Step 6 (localStorage) :
             <a
                 href="https://github.com/Ali-Sdg90/Todo-App"
+                target="_new"
+                >GitHub</a
+            >
+            |
+            <a href="https://jsfiddle.net/Ali_Sdg90/tz105ux4/1/" target="_new"
+                >JSFiddle</a
+            >
+        </p>
+    </li>
+    <li>
+        <p>
+            Todo Step 6 (Firebase) :
+            <a
+                href="https://github.com/Ali-Sdg90/Todo-App-Firebase"
                 target="_new"
                 >GitHub</a
             >
